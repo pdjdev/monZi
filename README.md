@@ -8,6 +8,7 @@ Windows PC용 미세먼지 조회·알림 프로그램
 - monZi 프로젝트 코드
 - monZi GUI 리소스 (일부 psd 원본 포함)
 - monZi WAV 리소스 (구버전 포함)
+- monZI API 캐싱 파이썬 스크립트
 
 ## 직접 빌드하기
 ### 요구 조건

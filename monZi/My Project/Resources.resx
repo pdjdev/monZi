@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="hisicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hisicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infoban" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoban.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refreshico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refreshico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appinfo" xml:space="preserve">
+    <value>monZi(먼지) - PC 미세먼지 실시간 조회 &amp; 알림 프로그램
+개발: 박동준 | PBJSoftware
+프로젝트 시작: 20180622 | 최종 빌드: 20190801
+
+※ monZi는 AirKorea(한국환경공단 에어코리아)로부터 대기오염정보, 측정소정보를 제공받고 있습니다. 해당 데이터는 실시간 관측된 자료이기 때문에 오류가 있을 수 있으며, 표출방식에 따라 값이 다를 수 있습니다. 또한 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신될 수 있습니다. ※
+
+본 프로그램(monZi) 는 PBJ소프트웨어에서 개발하고 배포하는 무료 소프트웨어입니다.
+이 프로그램은 개인, 가정, 기업, 관공서, 학교, 학원 등 언제나 어디에서나 무료로 제약없이 사용 가능합니다.
+본 프로그램은 현재 개발중이므로 일부 기능이나 작동 등에 결함이 있을 수 있습니다. 또한 본 프로그램으로 인해 생기는 사고나 불이익은 PBJ소프트웨어 측에서 책임 져 드릴 수 없으니 참고 바랍니다.
+이 프로그램을 배포하실 수는 있으나, 개발자 동의를 거치지 않고 임의로 수정하거나 고치지 마시기 바랍니다. 만약 위에 대해 동의하지 않거나 설치를 원하지 않는 경우, 언제든지 설치를 중단하거나 프로그램을 제거하실 수 있습니다.
+
+Special Thx:
+ 아이디어 도움 - 경북고 컴동
+ 프로젝트 작명 - SeoBak
+ 디자인 피드백 - LeeSJ
+
+Made with Visual Studio, .Net Framework - VB.net
+본 프로그램의 미세 먼지 알림 등급 분류 기준은 WHO권고사항 기준 8단계와 한국 표준인 한국환경공단의 4단계에 맞춰져 있습니다.
+미세먼지 데이터 제공: AirKorea(한국환경공단 에어코리아)
+지도 검색 API: 다음카카오 오픈API 로컬 서비스
+업데이트 정보 호스트: 내도메인.한국
+
+본 프로그램은 교내 SW공모전, 한국정보올림피아드 공모부문 출품작입니다.
+
+
+
+개발 노트:
+2019년 초부터 monZi의 사용량이 급증하면서
+다이렉트로 한국환경공단에서 대기 정보를 받아오던 방식을 사용하다가
+트래픽 초과로 접근이 불가능한 문제가 생겨
+버전 1.7부터는 개인 monZi 서버가 캐시 해 둔 전국의 대기 정보를 우선 수신하도록 변경되었습니다.
+다만... 이런 일이 일어날 줄 전혀 모르는 상태에서 시간도 없는데 황급히 놀고 있던 라즈베리 파이로 돌리는지라
+향후 더욱더 사용자가 늘어나게 되면 이마저도 또 문제가 생길지 모르는 상태입니다.
+
+
+그러므로..
+
+인제 고등학교 졸업을 앞둔 저에게 자식 같은 존재인 몬지가 가끔 사용자가 넘쳐나 오류를 내뱉고 작동 불능이 돼버린다면
+제 블로그의 업데이트 글(blog.pbj.kr)과 몬지 페이지(monzi.ze.am)를 들러서 업데이트가 없는지 한번 확인해 보시고,
+혹시 보통 문제가 아니다 생각되시면 언제든지 제 블로그나 개인 텔레그램(@pbjun)으로 알려주시면
+감사히 받고 최대한 빨리 조치를 취해보도록 노력하겠습니다.
+
+
+감사합니다 (-_-) (_ _)</value>
+  </data>
+  <data name="dash_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lockicon_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lockicon_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr6.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_6-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_3-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_7-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr7.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_er" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_er.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="popup_snd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\popup_snd.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="info_gmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_gmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="widget_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\widget_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr8.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_4-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moreicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moreicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_tg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_tg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lockicon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lockicon_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="locicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\locicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_yt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_yt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_5-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monZi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\monZi.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeicon_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeicon_b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_2-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hideicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hideicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_blog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="noticetxt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noticetxt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_load" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_load.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="widget_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\widget_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stationicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stationicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testdata" xml:space="preserve">
+    <value>&lt;response&gt;
+  &lt;header&gt;
+    &lt;resultCode&gt;00&lt;/resultCode&gt;
+    &lt;resultMsg&gt;NORMAL SERVICE.&lt;/resultMsg&gt;
+  &lt;/header&gt;
+  &lt;body&gt;
+    &lt;items&gt;
+      &lt;item&gt;
+        &lt;stationName&gt;창전동&lt;/stationName&gt;
+        &lt;addr&gt;경기 이천시 창전동105-3&lt;/addr&gt;
+        &lt;tm&gt;8.6&lt;/tm&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+        &lt;stationName&gt;설성면&lt;/stationName&gt;
+        &lt;addr&gt;경기 이천시 설성면 신필리산 88-5(전파연구소 입구)&lt;/addr&gt;
+        &lt;tm&gt;9.3&lt;/tm&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+        &lt;stationName&gt;여주읍&lt;/stationName&gt;
+        &lt;addr&gt;경기 여주군 여주읍 하리131-11(여주군청 별관 2층 옥상)&lt;/addr&gt;
+        &lt;tm&gt;14.9&lt;/tm&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+        &lt;stationName&gt;여주읍&lt;/stationName&gt;
+        &lt;addr&gt;경기 여주군 여주읍 하리131-11(여주군청 별관 2층 옥상)&lt;/addr&gt;
+        &lt;tm&gt;14.9&lt;/tm&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+        &lt;stationName&gt;여주읍&lt;/stationName&gt;
+        &lt;addr&gt;경기 여주군 여주읍 하리131-11(여주군청 별관 2층 옥상)&lt;/addr&gt;
+        &lt;tm&gt;14.9&lt;/tm&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+        &lt;stationName&gt;여주읍&lt;/stationName&gt;
+        &lt;addr&gt;경기 여주군 여주읍 하리131-11(여주군청 별관 2층 옥상)&lt;/addr&gt;
+        &lt;tm&gt;14.9&lt;/tm&gt;
+      &lt;/item&gt;
+    &lt;/items&gt;
+    &lt;numOfRows&gt;10&lt;/numOfRows&gt;
+    &lt;pageNo&gt;1&lt;/pageNo&gt;
+    &lt;totalCount&gt;3&lt;/totalCount&gt;
+  &lt;/body&gt;
+&lt;/response&gt;</value>
+  </data>
+</root>

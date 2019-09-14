@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D65D0C6-9294-44A1-9F50-B92E403ECD85}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>monZi.My.MyApplication</StartupObject>
+    <RootNamespace>monZi</RootNamespace>
+    <AssemblyName>monZi</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\pdj28\source\repos\쌤테릴리\st_release\monzi\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>monZi.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>monZi.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>monZi.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C957E91BC05F99BDF24D0D84A12374A84AF3ED6F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>monZi_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PBJsoftware.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ErrorForm.Designer.vb">
+      <DependentUpon>ErrorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\about.Designer.vb">
+      <DependentUpon>about.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\about.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StationList.Designer.vb">
+      <DependentUpon>StationList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StationList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayHover.Designer.vb">
+      <DependentUpon>TrayHover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrayHover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\airAPI.vb" />
+    <Compile Include="Modules\dataModule.vb" />
+    <Compile Include="Forms\APIForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\APIForm.Designer.vb">
+      <DependentUpon>APIForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\GUIEffect.vb" />
+    <Compile Include="Forms\LocationSet.Designer.vb">
+      <DependentUpon>LocationSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocationSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocList.Designer.vb">
+      <DependentUpon>LocList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainGUI.Designer.vb">
+      <DependentUpon>MainGUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainGUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\mapAPI.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\OptionForm.Designer.vb">
+      <DependentUpon>OptionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUpForm.Designer.vb">
+      <DependentUpon>PopUpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUpForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartupAsk.Designer.vb">
+      <DependentUpon>StartupAsk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StartupAsk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayForm.Designer.vb">
+      <DependentUpon>TrayForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrayForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.Designer.vb">
+      <DependentUpon>UpdateForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WidgetGUI.Designer.vb">
+      <DependentUpon>WidgetGUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WidgetGUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ErrorForm.resx">
+      <DependentUpon>ErrorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\about.resx">
+      <DependentUpon>about.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\APIForm.resx">
+      <DependentUpon>APIForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocationSet.resx">
+      <DependentUpon>LocationSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StationList.resx">
+      <DependentUpon>StationList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocList.resx">
+      <DependentUpon>LocList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainGui.resx">
+      <DependentUpon>MainGUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrayHover.resx">
+      <DependentUpon>TrayHover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionForm.resx">
+      <DependentUpon>OptionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUpForm.resx">
+      <DependentUpon>PopUpForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartupAsk.resx">
+      <DependentUpon>StartupAsk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrayForm.resx">
+      <DependentUpon>TrayForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.resx">
+      <DependentUpon>UpdateForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WidgetGUI.resx">
+      <DependentUpon>WidgetGUI.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\font.ttf" />
+    <None Include="bin\Debug\NanumSquareR.ttf" />
+    <None Include="monZi_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="PBJsoftware.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hideicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_2-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_3-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_4-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_5-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_6-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_7-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dash_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="monZi.ico" />
+    <None Include="Resources\info_tg.png" />
+    <None Include="Resources\moreicon.png" />
+    <None Include="Resources\lockicon_2.png" />
+    <None Include="Resources\lockicon_1.png" />
+    <None Include="Resources\widget_2.png" />
+    <None Include="Resources\widget_1.png" />
+    <None Include="Resources\hisicon.png" />
+    <None Include="Resources\dash_maintenance.png" />
+    <None Include="Resources\noticetxt.png" />
+    <None Include="Resources\opticon.png" />
+    <None Include="Resources\info_logo.png" />
+    <None Include="Resources\info_yt.png" />
+    <None Include="Resources\info_gmail.png" />
+    <None Include="Resources\info_blog.png" />
+    <None Include="Resources\infoban.jpg" />
+    <None Include="Resources\closeicon_b.png" />
+    <None Include="Resources\popup_snd.WAV" />
+    <None Include="Resources\icons\ico_load.ico" />
+    <None Include="Resources\icons\monZi.ico" />
+    <None Include="Resources\icons\ico_er.ico" />
+    <None Include="Resources\menu_4.png" />
+    <None Include="Resources\menu_3.png" />
+    <None Include="Resources\menu_2.png" />
+    <None Include="Resources\menu_1.png" />
+    <None Include="Resources\shadow.png" />
+    <None Include="Resources\icons\ico_gr8.ico" />
+    <None Include="Resources\icons\ico_gr7.ico" />
+    <None Include="Resources\icons\ico_gr6.ico" />
+    <None Include="Resources\icons\ico_gr5.ico" />
+    <None Include="Resources\icons\ico_gr4.ico" />
+    <None Include="Resources\icons\ico_gr3.ico" />
+    <None Include="Resources\icons\ico_gr2.ico" />
+    <None Include="Resources\icons\ico_gr1.ico" />
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

@@ -6,7 +6,7 @@ import time, lxml
 
 #회당 17번 요청
 sidoList = {'서울', '부산', '대구', '인천', '광주', '대전', '울산', '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주', '세종'}
-saveLocation = "/var/www/html/monziDB"
+saveLocation = "/var/www/html/monzi/update/stations/"
 getRange = 100
 serviceKey = ''
 

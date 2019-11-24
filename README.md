@@ -93,7 +93,7 @@ Windows PC용 미세먼지 조회·알림 프로그램
 
 2. 해당 프로젝트는 [GPL 3.0 라이센스](https://raw.githubusercontent.com/pdjdev/monZi/master/LICENSE)를 따르고 있습니다. 그렇기 때문에 법에 재촉되는 목적으로 이용하실 수 없으며, 해당 프로젝트를 이용하였을 시 이용한 프로젝트도 마찬가지로 공개해 주셔야 합니다. 상업적& 이용은 가능합니다.
 
-3. VB.net으로 작성되었습니다만, 이론상 C#으로 마이그레이션도 가능합니다. 일부 코드를 사용하고 싶은데 C#인 경우 [VB.net C# Converter](http://converter.telerik.com/)를 이용해 주시면 됩니다.
+3. VB.net으로 작성되었습니다만, 이론상 C#으로 마이그레이션도 가능합니다. 현재 WPF GUI 반영을 위해 마이그레이션 작업중입니다. 일부 C# 코드를 사용하고 싶은데 `\Migration` 에 없는 경우 [VB.net C# Converter](http://converter.telerik.com/)를 이용해 주시면 됩니다.
 
 4. 여담으로, 20190915 기준 리눅스에서도 Wine과 .Net Framework 4.6.1을 설치한 상태에서 실사용이 가능할 정도로 작동합니다. (위젯 기능이 좀 불안정하더라구요)
 

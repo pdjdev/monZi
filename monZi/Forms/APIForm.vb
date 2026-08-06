@@ -363,8 +363,6 @@ endtask:
 
             airData = getairinfo(station)
 
-            'MsgBox(airData)
-
 passforDEBUGING:
 
             APIupdTime = DateTime.Now.Day.ToString + "일 " + DateTime.Now.ToString("HH:mm:ss")
@@ -372,7 +370,7 @@ passforDEBUGING:
 
         Catch ex As Exception
             APIOK = False
-            combnum = -1
+        combnum = -1
         End Try
 endtask:
     End Sub
@@ -434,7 +432,13 @@ endtask:
         '메인GUI의 폼을 그리고 트레이도 새로고침
         MainGUI.DrawState()
         TrayForm.trayico_selector()
-        If My.Settings.widget_enabled Then WidgetGUI.DrawState()
+        If My.Settings.widget_enabled Then
+            If My.Settings.widget_type = "1" Then
+                WidgetGUI.DrawState()
+            Else
+                Widget2GUI.DrawState()
+            End If
+        End If
 
         '여기서부터는 푸시 알림 영역
         PushCheck()

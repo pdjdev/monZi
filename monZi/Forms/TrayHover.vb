@@ -31,6 +31,10 @@ Public Class TrayHover
                 TitleLabel.Text = APIForm.guititle
                 themecol = Color.FromArgb(49, 27, 146)
                 PictureBox2.Image = My.Resources.dash_maintenance
+            Case -3
+                AirStateLabel.Text = "위치 설정"
+                AirDetailLabel.Text = "메인 창을 열어" + vbCr + "위치를 지정해 주세요"
+                themecol = Color.FromArgb(55, 71, 79)
             Case -2
                 TitleLabel.Text = "monZi 오류"
                 AirStateLabel.Text = "오프라인"
@@ -81,7 +85,7 @@ Public Class TrayHover
 
         MainPanel.BackColor = themecol
 
-        If Not (APIForm.combnum = 0 Or APIForm.combnum = -1 Or APIForm.combnum = -2 Or APIForm.combnum = -4) Then
+        If Not (APIForm.combnum = 0 Or APIForm.combnum = -1 Or APIForm.combnum = -2 Or APIForm.combnum = -3 Or APIForm.combnum = -4) Then
             TitleLabel.Text = My.Settings.LocationName
             AirDetailLabel.Text = "미세/초미세: " + APIForm.pm10num + "/" + APIForm.pm25num + " (㎍/㎥)" + vbCr _
                 + "업데이트: " + APIForm.NowChk

@@ -11,10 +11,11 @@
     <AssemblyName>monZi</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\pdj28\source\repos\쌤테릴리\st_release\monzi\</PublishUrl>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\source\monZi\monZi\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -69,10 +70,11 @@
     <ApplicationIcon>monZi.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C957E91BC05F99BDF24D0D84A12374A84AF3ED6F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>00B4369113487619EE98A0E1792088620D2893C8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>monZi_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -81,10 +83,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>PBJsoftware.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -116,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Secrets.vb" />
     <Compile Include="ErrorForm.Designer.vb">
       <DependentUpon>ErrorForm.vb</DependentUpon>
     </Compile>
@@ -138,6 +142,12 @@
       <DependentUpon>TrayHover.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\TrayHover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Widget2GUI.Designer.vb">
+      <DependentUpon>Widget2GUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Widget2GUI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\airAPI.vb" />
@@ -173,6 +183,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -196,6 +207,7 @@
     <Compile Include="Forms\PopUpForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Settings.vb" />
     <Compile Include="Forms\StartupAsk.Designer.vb">
       <DependentUpon>StartupAsk.vb</DependentUpon>
     </Compile>
@@ -246,6 +258,9 @@
     <EmbeddedResource Include="Forms\TrayHover.resx">
       <DependentUpon>TrayHover.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Widget2GUI.resx">
+      <DependentUpon>Widget2GUI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -272,6 +287,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Secrets.example.vb" />
     <None Include="bin\Debug\font.ttf" />
     <None Include="bin\Debug\NanumSquareR.ttf" />
     <None Include="monZi_TemporaryKey.pfx" />
@@ -332,6 +348,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="monZi.ico" />
+    <None Include="Resources\resize_icon.png" />
     <None Include="Resources\info_tg.png" />
     <None Include="Resources\moreicon.png" />
     <None Include="Resources\lockicon_2.png" />

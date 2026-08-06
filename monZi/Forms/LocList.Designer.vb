@@ -45,7 +45,7 @@ Partial Class LocList
         Me.ListBox1.ColumnWidth = 5
         Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable
-        Me.ListBox1.Font = New System.Drawing.Font("나눔스퀘어", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.ListBox1.Font = New System.Drawing.Font("Noto Sans KR", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.ListBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 23
@@ -72,7 +72,7 @@ Partial Class LocList
         'TitleLabel
         '
         Me.TitleLabel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TitleLabel.Font = New System.Drawing.Font("나눔스퀘어", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.TitleLabel.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
         Me.TitleLabel.Location = New System.Drawing.Point(10, 0)
         Me.TitleLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -121,7 +121,7 @@ Partial Class LocList
         '
         Me.EmptyMsg_DownLink.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.EmptyMsg_DownLink.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.EmptyMsg_DownLink.Font = New System.Drawing.Font("나눔스퀘어", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.EmptyMsg_DownLink.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.EmptyMsg_DownLink.LinkColor = System.Drawing.Color.Gray
         Me.EmptyMsg_DownLink.Location = New System.Drawing.Point(0, 104)
         Me.EmptyMsg_DownLink.Name = "EmptyMsg_DownLink"
@@ -135,7 +135,7 @@ Partial Class LocList
         'EmptyMsg_Upper
         '
         Me.EmptyMsg_Upper.Dock = System.Windows.Forms.DockStyle.Top
-        Me.EmptyMsg_Upper.Font = New System.Drawing.Font("나눔스퀘어", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.EmptyMsg_Upper.Font = New System.Drawing.Font("Noto Sans KR", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.EmptyMsg_Upper.ForeColor = System.Drawing.Color.Gray
         Me.EmptyMsg_Upper.Location = New System.Drawing.Point(0, 0)
         Me.EmptyMsg_Upper.Name = "EmptyMsg_Upper"
@@ -149,7 +149,7 @@ Partial Class LocList
         '
         Me.ClearButton.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClearButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ClearButton.Font = New System.Drawing.Font("나눔스퀘어", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.ClearButton.Font = New System.Drawing.Font("Noto Sans KR", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.ClearButton.LinkColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClearButton.Location = New System.Drawing.Point(307, 0)
         Me.ClearButton.Name = "ClearButton"

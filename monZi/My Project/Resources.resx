@@ -127,13 +127,10 @@
   <data name="infoban" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infoban.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refreshico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refreshico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="appinfo" xml:space="preserve">
     <value>monZi(먼지) - PC 미세먼지 실시간 조회 &amp; 알림 프로그램
 개발: 박동준 | PBJSoftware
-프로젝트 시작: 20180622 | 최종 빌드: 20190801
+프로젝트 시작: 20180622 | 최종 빌드: 20211129
 
 ※ monZi는 AirKorea(한국환경공단 에어코리아)로부터 대기오염정보, 측정소정보를 제공받고 있습니다. 해당 데이터는 실시간 관측된 자료이기 때문에 오류가 있을 수 있으며, 표출방식에 따라 값이 다를 수 있습니다. 또한 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신될 수 있습니다. ※
 
@@ -176,6 +173,9 @@ Made with Visual Studio, .Net Framework - VB.net
 
 감사합니다 (-_-) (_ _)</value>
   </data>
+  <data name="ico_gr4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dash_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dash_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -194,122 +194,8 @@ Made with Visual Studio, .Net Framework - VB.net
   <data name="dash_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dash_3-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dash_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_7-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ico_gr7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\ico_gr7.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_gr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_gr2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="listicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\listicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_gr3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_gr3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_er" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_er.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="popup_snd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\popup_snd.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="info_gmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_gmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menu_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="widget_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\widget_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="closeicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\closeicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_gr4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_gr4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_gr8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_gr8.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menu_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_4-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="moreicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moreicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info_tg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_tg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_gr5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_gr5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lockicon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lockicon_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menu_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="locicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\locicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="opticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info_yt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_yt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_5-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="monZi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\monZi.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="closeicon_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\closeicon_b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_2-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hideicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hideicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info_blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_blog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_gr1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_gr1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="noticetxt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noticetxt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_load" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\ico_load.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="widget_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\widget_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stationicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stationicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="testdata" xml:space="preserve">
     <value>&lt;response&gt;
@@ -355,5 +241,122 @@ Made with Visual Studio, .Net Framework - VB.net
     &lt;totalCount&gt;3&lt;/totalCount&gt;
   &lt;/body&gt;
 &lt;/response&gt;</value>
+  </data>
+  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moreicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moreicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hideicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hideicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr3.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_er" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_er.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="noticetxt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noticetxt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="widget_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\widget_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="popup_snd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\popup_snd.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dash_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr8.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_4-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refreshico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refreshico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="widget_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\widget_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr5.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lockicon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lockicon_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="locicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\locicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_7-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_yt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_yt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_5-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monZi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\monZi.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeicon_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeicon_b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_2-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_tg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_tg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_blog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_gr1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_gr1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_gmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_gmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_load" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\ico_load.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dash_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dash_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stationicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stationicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="resize_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resize_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

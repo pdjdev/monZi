@@ -168,6 +168,7 @@ pass1:
         etchk_2.Checked = My.Settings.FadeEnabled
         etchk_3.Checked = My.Settings.AniEnabled
         etchk_4.Checked = My.Settings.UseNativeFont
+        etchk_5.Checked = My.Settings.TrayHoverEnabled
         etchk_debug.Checked = My.Settings.APIFORM
         etchk_useakapi.Checked = My.Settings.UseAKAPI
 
@@ -231,6 +232,7 @@ pass1:
         My.Settings.FadeEnabled = etchk_2.Checked
         My.Settings.AniEnabled = etchk_3.Checked
         My.Settings.UseNativeFont = etchk_4.Checked
+        My.Settings.TrayHoverEnabled = etchk_5.Checked
         My.Settings.APIFORM = etchk_debug.Checked
         My.Settings.UseAKAPI = etchk_useakapi.Checked
         My.Settings.FormPos = ComboBox1.SelectedIndex.ToString + ComboBox2.SelectedIndex.ToString

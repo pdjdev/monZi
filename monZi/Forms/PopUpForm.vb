@@ -168,4 +168,8 @@
         AniTimer.Start()
         FirstWaitTimer.Stop()
     End Sub
+
+    Private Sub AirCommentLabel_Click(sender As Object, e As EventArgs) Handles AirCommentLabel.Click
+
+    End Sub
 End Class

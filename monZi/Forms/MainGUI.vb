@@ -1,4 +1,6 @@
-﻿Public Class MainGUI
+﻿Imports System.Drawing.Text
+
+Public Class MainGUI
     '슬라이딩 애니메이션 구현을 위한 임시변수
     Dim poscount As Integer = 0
     Dim ShowingMenu As Boolean = False
@@ -68,8 +70,6 @@
         ShowingMenu = False
         MenuPanel.Visible = False
 
-        If My.Settings.UseNativeFont Then ChangeToNativeFont(Me)
-
         If My.Settings.widget_enabled Then
             WidgetButton.Image = My.Resources.widget_2
         Else
@@ -82,6 +82,7 @@
         If goUp Then
             HideButton.Image.RotateFlip(RotateFlipType.Rotate180FlipNone)
         End If
+
 
     End Sub
 
@@ -161,7 +162,7 @@
                 DashPic.Image = Nothing
             Case -1
                 AirStateLabel.Text = "오류"
-                AirCommentLabel.Text = "새로고침 혹은" + vbCr + "새로 위치를 지정해 보세요"
+                AirCommentLabel.Text = "오류가 발생했어요"
                 titleStr = "오류 발생"
                 LocationLabel.Text = ""
                 AirDetailLabel.Text = "인터넷 연결 문제, 혹은 측정소 점검" + vbCr + "등으로 인한 접근 제한이 원인일 수 있습니다." + vbCr + "(문제가 지속될시 업데이트를 확인하세요)"
@@ -448,7 +449,7 @@ endtask:
         Select Case obj.Name
             Case "ListButton2"
                 helptext = "메인 화면"
-            Case "CloseButton" 
+            Case "CloseButton"
                 helptext = "monZi 종료"
             Case "CloseLabel"
                 helptext = "monZi 종료"
@@ -632,7 +633,11 @@ endtask:
             '비활성화시에
             My.Settings.widget_enabled = True
             WidgetButton.Image = My.Resources.widget_2
-            WidgetGUI.Show()
+            If My.Settings.widget_type = "1" Then
+                WidgetGUI.Show()
+            Else
+                Widget2GUI.Show()
+            End If
         End If
 
         My.Settings.Save()

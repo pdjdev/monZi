@@ -247,7 +247,7 @@ endtask:
                 StationList.AirStationData = getNearStation(tm_co(0), tm_co(1))
             Catch ex As Exception
                 MsgBox("측정소를 검색하던 도중 오류가 발생했습니다." + vbCr + "주소가 유효한지 확인해 주세요.", vbExclamation)
-                StationList.ShowDialog(Me)
+                'StationList.ShowDialog(Me)
                 GoTo donothing
             End Try
 

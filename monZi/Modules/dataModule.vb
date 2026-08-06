@@ -3,7 +3,6 @@ Imports System.Text.RegularExpressions
 
 Module dataModule
 
-#Region "문자열 관련"
     'web에서 문자열 가져오는 함수
     Public Function webget(url As String)
         Dim source = New System.Net.WebClient()
@@ -36,15 +35,23 @@ Module dataModule
 
         midReturn = ((total.Substring(total.IndexOf(first), (total.IndexOf(last) - total.IndexOf(first)))).Replace(first, "")).Replace(last, "")
     End Function
-#End Region
+
 
 #Region "시작프로그램설정"
 
+    Dim shortcutname = "\monzi.lnk"
+    Const AppLaunchCmd = "C:\Windows\explorer.exe"
+    Const AppCode = "shell:appsFolder\49490PBJSoftware.monZi_fv4zvza0919de!App"
+
+    Const isStoreApp = False
+
     Public Function checkStartUp() As Boolean
-        Dim destlnk As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & "\monzi.lnk"
+        Dim destlnk As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & shortcutname
 
         If IO.File.Exists(destlnk) Then
-            If GetTargetPath(destlnk) = Application.ExecutablePath Then
+            If isStoreApp And GetTargetPath(destlnk) = AppLaunchCmd + " " + AppCode Then
+                Return True
+            ElseIf Not isStoreApp And GetTargetPath(destlnk) = Application.ExecutablePath Then
                 Return True
             Else
                 Return False
@@ -59,13 +66,20 @@ Module dataModule
         Dim identity = WindowsIdentity.GetCurrent()
         Dim principal = New WindowsPrincipal(identity)
 
-        Path = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & "\monzi.lnk"
+        Path = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & shortcutname
 
         Dim wsh As Object = CreateObject("WScript.Shell")
 
         Dim MyShortcut
         MyShortcut = wsh.CreateShortcut(Path)
-        MyShortcut.TargetPath = wsh.ExpandEnvironmentStrings(Application.ExecutablePath)
+
+        If isStoreApp Then
+            MyShortcut.TargetPath = wsh.ExpandEnvironmentStrings(AppLaunchCmd)
+            MyShortcut.Arguments = AppCode
+        Else
+            MyShortcut.TargetPath = wsh.ExpandEnvironmentStrings(Application.ExecutablePath)
+        End If
+
         MyShortcut.WindowStyle = 4
         MyShortcut.Save()
     End Sub
@@ -74,27 +88,20 @@ Module dataModule
         My.Computer.FileSystem.DeleteFile(Environment.GetFolderPath(Environment.SpecialFolder.Startup) & "\monzi.lnk")
     End Sub
 
-    '바로가기 파일의 목적지경로를 리턴 -> Win7 포함한 일부 환경에 문제 있어 사용안함!!!
-    Public Function GetLnkTarget(lnkPath As String) As String
-        Dim shl = New Shell32.Shell()
-        lnkPath = System.IO.Path.GetFullPath(lnkPath)
-        Dim dir = shl.[NameSpace](System.IO.Path.GetDirectoryName(lnkPath))
-        Dim itm = dir.Items().Item(System.IO.Path.GetFileName(lnkPath))
-        Dim lnk = DirectCast(itm.GetLink, Shell32.ShellLinkObject)
-        Return lnk.Target.Path
-    End Function
-
     '바로가기 목적지경로 리턴 2
     Function GetTargetPath(ByVal FileName As String)
         Dim Obj As Object
         Obj = CreateObject("WScript.Shell")
         Dim Shortcut As Object
         Shortcut = Obj.CreateShortcut(FileName)
-        GetTargetPath = Shortcut.TargetPath
-    End Function
-#End Region
 
-#Region "히스토리 데이터 관리"
+        If Not Shortcut.Arguments = "" Then
+            Return Shortcut.TargetPath + " " + Shortcut.Arguments
+        Else
+            Return Shortcut.TargetPath
+        End If
+    End Function
+
     Public Function CheckHisExist(isStationName As Boolean, locstring As String) As Boolean
 
         Dim isExists As Boolean = False
@@ -211,6 +218,6 @@ ret:
         My.Settings.LocHistory = hisdata + My.Settings.LocHistory
 
     End Sub
-#End Region
 
+#End Region
 End Module

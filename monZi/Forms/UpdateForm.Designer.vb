@@ -59,7 +59,7 @@ Partial Class UpdateForm
         'TitleLabel
         '
         Me.TitleLabel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.TitleLabel.Font = New System.Drawing.Font("나눔스퀘어", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.TitleLabel.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
         Me.TitleLabel.Location = New System.Drawing.Point(10, 0)
         Me.TitleLabel.Name = "TitleLabel"

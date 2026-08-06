@@ -75,7 +75,7 @@ Partial Class LocationSet
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("나눔스퀘어", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Noto Sans KR", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(15, 16)
         Me.Label1.Name = "Label1"
@@ -87,7 +87,7 @@ Partial Class LocationSet
         '
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TextBox1.Font = New System.Drawing.Font("나눔스퀘어", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.TextBox1.Font = New System.Drawing.Font("Noto Sans KR", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Black
         Me.TextBox1.Location = New System.Drawing.Point(0, 28)
         Me.TextBox1.Name = "TextBox1"
@@ -128,7 +128,7 @@ Partial Class LocationSet
         '
         Me.Button1.BackColor = System.Drawing.Color.DimGray
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("나눔스퀘어", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(6, 24)
         Me.Button1.Name = "Button1"
@@ -155,7 +155,7 @@ Partial Class LocationSet
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("나눔스퀘어", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.LinkLabel1.Font = New System.Drawing.Font("Noto Sans KR", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
         Me.LinkLabel1.Location = New System.Drawing.Point(291, 61)
         Me.LinkLabel1.Name = "LinkLabel1"
@@ -179,7 +179,7 @@ Partial Class LocationSet
         Me.Button2.BackColor = System.Drawing.Color.DimGray
         Me.Button2.Enabled = False
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("나눔스퀘어", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(355, 94)
         Me.Button2.Name = "Button2"
@@ -191,7 +191,7 @@ Partial Class LocationSet
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("나눔스퀘어", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.CheckBox1.Font = New System.Drawing.Font("Noto Sans KR", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.CheckBox1.Location = New System.Drawing.Point(20, 60)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(117, 17)
@@ -214,7 +214,7 @@ Partial Class LocationSet
         'TitleLabel
         '
         Me.TitleLabel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.TitleLabel.Font = New System.Drawing.Font("나눔스퀘어", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.TitleLabel.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
         Me.TitleLabel.Location = New System.Drawing.Point(10, 0)
         Me.TitleLabel.Name = "TitleLabel"
@@ -237,7 +237,7 @@ Partial Class LocationSet
         'HelpText
         '
         Me.HelpText.AutoSize = True
-        Me.HelpText.Font = New System.Drawing.Font("나눔스퀘어", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.HelpText.Font = New System.Drawing.Font("Noto Sans KR", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.HelpText.ForeColor = System.Drawing.Color.Gray
         Me.HelpText.Location = New System.Drawing.Point(6, 27)
         Me.HelpText.Name = "HelpText"

@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -63,7 +63,7 @@ Namespace My.Resources
         '''<summary>
         '''  monZi(먼지) - PC 미세먼지 실시간 조회 &amp; 알림 프로그램
         '''개발: 박동준 | PBJSoftware
-        '''프로젝트 시작: 20180622 | 최종 빌드: 20190801
+        '''프로젝트 시작: 20180622 | 최종 빌드: 20211129
         '''
         '''※ monZi는 AirKorea(한국환경공단 에어코리아)로부터 대기오염정보, 측정소정보를 제공받고 있습니다. 해당 데이터는 실시간 관측된 자료이기 때문에 오류가 있을 수 있으며, 표출방식에 따라 값이 다를 수 있습니다. 또한 측정소 현지 사정이나 데이터의 수신상태에 따라 미수신될 수 있습니다. ※
         '''
@@ -523,6 +523,16 @@ Namespace My.Resources
         Friend ReadOnly Property refreshico() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("refreshico", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        '''</summary>
+        Friend ReadOnly Property resize_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("resize_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

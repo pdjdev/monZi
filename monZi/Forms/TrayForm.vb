@@ -47,7 +47,14 @@ Public Class TrayForm
             MainGUI_Open() '폼을 보여줘서 유도
         End If
 
-        If My.Settings.widget_enabled Then WidgetGUI.Show()
+        If My.Settings.widget_enabled Then
+            If My.Settings.widget_type = "1" Then
+                WidgetGUI.Show()
+            Else
+                Widget2GUI.Show()
+            End If
+
+        End If
     End Sub
 
     Function isSettingAvailable() As Boolean
@@ -171,8 +178,9 @@ Public Class TrayForm
                 traystr += "알 수 없음"
         End Select
 
-        'traystr += vbCr + "마지막 업데이트: " + APIForm.APIupdTime
-        'NotifyIcon1.Text = traystr
+        traystr += vbCr + "마지막 업데이트: " + APIForm.APIupdTime
+
+        NotifyIcon1.Text = traystr
 
 ignoretask:
 
@@ -295,23 +303,27 @@ ignoretask:
     End Function
 
     Private Sub OverTrayTimer_Tick(ByVal sender As Object, ByVal e As EventArgs)
-        If GetTrayIconRectangle.Contains(MousePosition) Then
-            If Not PopShown And Not Application.OpenForms().OfType(Of MainGUI).Any Then
-                Try
-                    PopShown = True
-                    p.X = Cursor.Position.X - (TrayHover.Width / 2)
-                    p.Y = Screen.GetWorkingArea(Cursor.Position).Height - TrayHover.Height - dpicalc(Me, 10)
-                    TrayHover.SetDesktopLocation(p.X, p.Y)
-                    TrayHover.Show()
-                Catch ex As Exception
+        If My.Settings.TrayHoverEnabled Then
+            If GetTrayIconRectangle.Contains(MousePosition) Then
+                If Not PopShown And Not Application.OpenForms().OfType(Of MainGUI).Any Then
+                    Try
+                        PopShown = True
+                        p.X = Cursor.Position.X - (TrayHover.Width / 2)
+                        p.Y = Screen.GetWorkingArea(Cursor.Position).Height - TrayHover.Height - dpicalc(Me, 10)
+                        TrayHover.SetDesktopLocation(p.X, p.Y)
+                        TrayHover.Show()
+                    Catch ex As Exception
 
-                End Try
+                    End Try
+                End If
+            Else
+                If PopShown Then
+                    PopShown = False
+                    TrayHover.Close()
+                End If
             End If
-        Else
-            If PopShown Then
-                PopShown = False
-                TrayHover.Close()
-            End If
+
         End If
+
     End Sub
 End Class

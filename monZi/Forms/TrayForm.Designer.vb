@@ -44,57 +44,63 @@ Partial Class TrayForm
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.BackColor = System.Drawing.Color.White
-        Me.ContextMenuStrip1.Font = New System.Drawing.Font("나눔스퀘어", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Noto Sans KR", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.M0openGUIToolStripMenuItem, Me.M2updateToolStripMenuItem, Me.M3pushToolStripMenuItem, Me.M1closeappToolStripMenuItem, Me.APIFormShowToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.ShowImageMargin = False
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(169, 134)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(192, 212)
         '
         'M0openGUIToolStripMenuItem
         '
-        Me.M0openGUIToolStripMenuItem.Font = New System.Drawing.Font("나눔스퀘어 Bold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.M0openGUIToolStripMenuItem.Font = New System.Drawing.Font("Noto Sans KR", 11.0!)
         Me.M0openGUIToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 2, 0, 2)
         Me.M0openGUIToolStripMenuItem.Name = "M0openGUIToolStripMenuItem"
-        Me.M0openGUIToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.M0openGUIToolStripMenuItem.Size = New System.Drawing.Size(191, 32)
         Me.M0openGUIToolStripMenuItem.Text = "monZi 열기"
         '
         'M2updateToolStripMenuItem
         '
+        Me.M2updateToolStripMenuItem.Font = New System.Drawing.Font("Noto Sans KR", 11.0!)
         Me.M2updateToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 2, 0, 2)
         Me.M2updateToolStripMenuItem.Name = "M2updateToolStripMenuItem"
-        Me.M2updateToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.M2updateToolStripMenuItem.Size = New System.Drawing.Size(191, 32)
         Me.M2updateToolStripMenuItem.Text = "실시간 업데이트"
         '
         'M3pushToolStripMenuItem
         '
+        Me.M3pushToolStripMenuItem.Font = New System.Drawing.Font("Noto Sans KR", 11.0!)
         Me.M3pushToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 2, 0, 2)
         Me.M3pushToolStripMenuItem.Name = "M3pushToolStripMenuItem"
-        Me.M3pushToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.M3pushToolStripMenuItem.Size = New System.Drawing.Size(191, 32)
         Me.M3pushToolStripMenuItem.Text = "실시간 푸시 알림"
         '
         'M1closeappToolStripMenuItem
         '
+        Me.M1closeappToolStripMenuItem.Font = New System.Drawing.Font("Noto Sans KR", 11.0!)
         Me.M1closeappToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 2, 0, 2)
         Me.M1closeappToolStripMenuItem.Name = "M1closeappToolStripMenuItem"
         Me.M1closeappToolStripMenuItem.ShowShortcutKeys = False
-        Me.M1closeappToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.M1closeappToolStripMenuItem.Size = New System.Drawing.Size(191, 32)
         Me.M1closeappToolStripMenuItem.Text = "프로그램 종료"
         '
         'APIFormShowToolStripMenuItem
         '
+        Me.APIFormShowToolStripMenuItem.Font = New System.Drawing.Font("Noto Sans KR", 11.0!)
         Me.APIFormShowToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 2, 0, 2)
         Me.APIFormShowToolStripMenuItem.Name = "APIFormShowToolStripMenuItem"
-        Me.APIFormShowToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.APIFormShowToolStripMenuItem.Size = New System.Drawing.Size(191, 32)
         Me.APIFormShowToolStripMenuItem.Text = "APIForm Show"
         Me.APIFormShowToolStripMenuItem.Visible = False
         '
         'TrayForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(82, 67)
+        Me.ClientSize = New System.Drawing.Size(94, 84)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "TrayForm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False

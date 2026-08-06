@@ -36,13 +36,12 @@ Partial Class TrayHover
         '
         Me.AirStateLabel.BackColor = System.Drawing.Color.Transparent
         Me.AirStateLabel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AirStateLabel.Font = New System.Drawing.Font("나눔스퀘어 ExtraBold", 17.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.AirStateLabel.Font = New System.Drawing.Font("Noto Sans KR", 15.0!, System.Drawing.FontStyle.Bold)
         Me.AirStateLabel.ForeColor = System.Drawing.Color.White
-        Me.AirStateLabel.Location = New System.Drawing.Point(56, 25)
+        Me.AirStateLabel.Location = New System.Drawing.Point(70, 31)
         Me.AirStateLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.AirStateLabel.Name = "AirStateLabel"
-        Me.AirStateLabel.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
-        Me.AirStateLabel.Size = New System.Drawing.Size(126, 29)
+        Me.AirStateLabel.Size = New System.Drawing.Size(157, 36)
         Me.AirStateLabel.TabIndex = 8
         Me.AirStateLabel.Text = "로드 중"
         Me.AirStateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -51,13 +50,13 @@ Partial Class TrayHover
         '
         Me.AirDetailLabel.BackColor = System.Drawing.Color.Transparent
         Me.AirDetailLabel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.AirDetailLabel.Font = New System.Drawing.Font("나눔스퀘어 Bold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.AirDetailLabel.Font = New System.Drawing.Font("Noto Sans KR", 7.0!, System.Drawing.FontStyle.Bold)
         Me.AirDetailLabel.ForeColor = System.Drawing.Color.White
-        Me.AirDetailLabel.Location = New System.Drawing.Point(6, 54)
+        Me.AirDetailLabel.Location = New System.Drawing.Point(8, 67)
         Me.AirDetailLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.AirDetailLabel.Name = "AirDetailLabel"
         Me.AirDetailLabel.Padding = New System.Windows.Forms.Padding(0, 1, 0, 0)
-        Me.AirDetailLabel.Size = New System.Drawing.Size(176, 31)
+        Me.AirDetailLabel.Size = New System.Drawing.Size(219, 39)
         Me.AirDetailLabel.TabIndex = 9
         Me.AirDetailLabel.Text = "미세/초미세: 15/15 (㎍/㎥)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1일 12:27:00"
         Me.AirDetailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -68,10 +67,10 @@ Partial Class TrayHover
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
         Me.PictureBox2.Image = Global.monZi.My.Resources.Resources.dash_1
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 7)
+        Me.PictureBox2.Location = New System.Drawing.Point(8, 9)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 47)
+        Me.PictureBox2.Size = New System.Drawing.Size(62, 58)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False
@@ -87,35 +86,36 @@ Partial Class TrayHover
         Me.MainPanel.Location = New System.Drawing.Point(0, 0)
         Me.MainPanel.Margin = New System.Windows.Forms.Padding(2)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Padding = New System.Windows.Forms.Padding(6, 7, 6, 7)
-        Me.MainPanel.Size = New System.Drawing.Size(188, 92)
+        Me.MainPanel.Padding = New System.Windows.Forms.Padding(8, 9, 8, 9)
+        Me.MainPanel.Size = New System.Drawing.Size(235, 115)
         Me.MainPanel.TabIndex = 12
         '
         'TitleLabel
         '
         Me.TitleLabel.BackColor = System.Drawing.Color.Transparent
         Me.TitleLabel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TitleLabel.Font = New System.Drawing.Font("나눔스퀘어 Bold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.TitleLabel.Font = New System.Drawing.Font("Noto Sans KR", 9.0!, System.Drawing.FontStyle.Bold)
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
-        Me.TitleLabel.Location = New System.Drawing.Point(56, 7)
+        Me.TitleLabel.Location = New System.Drawing.Point(70, 9)
         Me.TitleLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.TitleLabel.Name = "TitleLabel"
-        Me.TitleLabel.Padding = New System.Windows.Forms.Padding(6, 1, 0, 0)
-        Me.TitleLabel.Size = New System.Drawing.Size(126, 18)
+        Me.TitleLabel.Padding = New System.Windows.Forms.Padding(2, 0, 0, 0)
+        Me.TitleLabel.Size = New System.Drawing.Size(157, 22)
         Me.TitleLabel.TabIndex = 10
         Me.TitleLabel.Text = "monZi"
         Me.TitleLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'TrayHover
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(188, 92)
+        Me.ClientSize = New System.Drawing.Size(235, 115)
         Me.Controls.Add(Me.MainPanel)
-        Me.Font = New System.Drawing.Font("나눔스퀘어", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Font = New System.Drawing.Font("Noto Sans KR", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "TrayHover"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual

@@ -12,8 +12,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("실시간 대기정보 조회, 알림 프로그램")>
 <Assembly: AssemblyCompany("PBJSoftware")>
 <Assembly: AssemblyProduct("monZi")>
-<Assembly: AssemblyCopyright("PBJSoftware 2019")>
-<Assembly: AssemblyTrademark("PBJSoftware 2019")>
+<Assembly: AssemblyCopyright("PBJSoftware 2026")>
+<Assembly: AssemblyTrademark("PBJSoftware 2026")>
 
 <Assembly: ComVisible(True)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.8.2.0")>
-<Assembly: AssemblyFileVersion("1.8.2.0")>
+<Assembly: AssemblyVersion("1.9.0.0")>
+<Assembly: AssemblyFileVersion("1.9.0.0")>

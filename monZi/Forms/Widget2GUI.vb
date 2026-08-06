@@ -1,10 +1,14 @@
 ﻿Imports System.Runtime.InteropServices
 
-Public Class WidgetGUI
+Public Class Widget2GUI
     Dim loc As Point
 
     Dim themecol As Color = Nothing
     Dim targcol As Color = Color.FromArgb(49, 159, 158)
+
+    Dim origianlSize As New Size
+    Dim prevSize As New Size
+
     Dim formshown As Boolean = False
 
 #Region "Aero 그림자 효과 (Vista이상)"
@@ -29,6 +33,8 @@ Public Class WidgetGUI
         FadeOut(Me)
     End Sub
 #End Region
+
+
 
 
 #Region "창 이동, 붙기 관련"
@@ -102,6 +108,11 @@ Public Class WidgetGUI
         Opacity = 0
         lockChk()
         DrawState()
+
+        origianlSize = Size
+
+        ZoomForm(Me, My.Settings.widget_zoom, True, True)
+
     End Sub
 
     Private Sub Form_DoubleClick(sender As Object, e As MouseEventArgs) Handles TopPanel.DoubleClick,
@@ -110,11 +121,11 @@ Public Class WidgetGUI
     End Sub
 
     'Private Sub FormDrag_MouseUp(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseUp,
-    '    TitleLabel.MouseUp, DashPic.MouseUp, AirStateLabel.MouseUp, AirDetailLabel.MouseUp
-    '    My.Settings.widget_position = Location
-    '    My.Settings.widget_display = Screen.FromControl(Me).DeviceName
-    '    My.Settings.Save()
-    '    My.Settings.Reload()
+    '  TitleLabel.MouseUp, DashPic.MouseUp, AirStateLabel.MouseUp, AirDetailLabel.MouseUp
+    'My.Settings.widget_position = Location
+    'My.Settings.widget_display = Screen.FromControl(Me).DeviceName
+    'My.Settings.Save()
+    'My.Settings.Reload()
     'End Sub
 
     Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles Me.LocationChanged
@@ -150,43 +161,66 @@ Public Class WidgetGUI
 
     '상태 그리기
     Public Sub DrawState()
+        Dim titleStr As String = Nothing
         DashPic.Image = Nothing
 
         Select Case APIForm.combnum
-            Case -4
-                AirStateLabel.Text = "점검중"
-                AirDetailLabel.Text = "해당 측정소에서 대기 상태를" + vbCr + "받아올 수 없습니다." + vbCr + "메인 창을 열어 장소를 변경하세요."
-                TitleLabel.Text = APIForm.guititle
+            Case -5
+                AirStateLabel.Text = "트래픽 초과"
+                AirCommentLabel.Text = "monZi 요청 트래픽 초과"
+                AirDetailLabel.Text = "서버 요청이 급격히 증가하여 현재 접근이 불가합니다." + vbCr + "(여기를 클릭하여 도움말 페이지 열기)"
+                titleStr = APIForm.guititle
+                LocationLabel.Text = My.Settings.LocationName
                 themecol = Color.FromArgb(49, 27, 146)
                 DashPic.Image = My.Resources.dash_maintenance
-                Icon = My.Resources.ico_er
+            Case -4
+                AirStateLabel.Text = "점검중"
+                AirCommentLabel.Text = "점검중/사용 불가 상태입니다"
+                AirDetailLabel.Text = "해당 측정소에서 대기 상태를 받아올 수 없습니다." + vbCr + "'측정소명으로 검색'을 통해 다른 측정소를 지정하세요." + vbCr + "(여기를 클릭하여 주변 측정소 정보 조회)"
+                titleStr = APIForm.guititle
+                LocationLabel.Text = My.Settings.LocationName
+                themecol = Color.FromArgb(49, 27, 146)
+                DashPic.Image = My.Resources.dash_maintenance
             Case -3
                 AirStateLabel.Text = "위치 설정"
-                AirDetailLabel.Text = "메인 창을 열어" + vbCr + "위치를 지정해 주세요"
+                AirCommentLabel.Text = "위치를 지정해 주세요"
+                titleStr = "monZi"
+                LocationLabel.Text = "여기를 눌러 위치를 지정"
+                AirDetailLabel.Text = "대기 상태를 업데이트 받을 위치를" + vbCr + "좌측 아래 위치명 부분을 눌러 설정하세요"
                 themecol = Color.FromArgb(55, 71, 79)
+                DashPic.Image = Nothing
             Case -2
-                TitleLabel.Text = "monZi 오류"
                 AirStateLabel.Text = "오프라인"
-                AirDetailLabel.Text = "인터넷 연결을 확인한 뒤" + vbCr + "새로고침해 주세요" + vbCr + "(3분 간격으로 자동 체크합니다)"
+                AirCommentLabel.Text = "인터넷에 연결되지 않았네요"
+                titleStr = "인터넷 연결 안됨"
+                LocationLabel.Text = ""
+                AirDetailLabel.Text = "인터넷 연결을 확인한 뒤 새로고침해 주세요" + vbCr + "(3분 간격으로 자동 체크합니다)"
                 themecol = Color.FromArgb(55, 71, 79)
-                Icon = My.Resources.ico_er
+                DashPic.Image = Nothing
             Case -1
-                TitleLabel.Text = "monZi 오류"
-                AirStateLabel.Text = "오류 발생"
-                AirDetailLabel.Text = "인터넷 연결 문제, 혹은 측정소 점검 등으로 인한 접근 제한이 원인일 수 있습니다."
+                AirStateLabel.Text = "오류"
+                AirCommentLabel.Text = "새로고침 혹은" + vbCr + "새로 위치를 지정해 보세요"
+                titleStr = "오류 발생"
+                LocationLabel.Text = ""
+                AirDetailLabel.Text = "인터넷 연결 문제, 혹은 측정소 점검" + vbCr + "등으로 인한 접근 제한이 원인일 수 있습니다." + vbCr + "(문제가 지속될시 업데이트를 확인하세요)"
                 themecol = Color.FromArgb(55, 71, 79)
-                Icon = My.Resources.ico_er
+                DashPic.Image = Nothing
             Case 0
                 AirStateLabel.Text = "로드 중"
-                AirDetailLabel.Text = "이 상태가 지속된다면" + vbCr + "프로그램을 다시 시작해 주세요"
+                AirCommentLabel.Text = "잠시만 기다려 주세요"
+                titleStr = "로드 중"
+                LocationLabel.Text = "로드 중"
+                AirDetailLabel.Text = "정보를 불러오고 있는 중입니다."
                 themecol = Color.FromArgb(55, 71, 79)
+                DashPic.Image = Nothing
             Case 1
                 AirStateLabel.Text = "최고"
+                AirCommentLabel.Text = "신선한 공기 마음껏 마시세요~"
                 themecol = Color.FromArgb(30, 136, 229)
                 DashPic.Image = My.Resources.dash_1
-                Icon = My.Resources.ico_gr1
             Case 2
                 AirStateLabel.Text = "좋음"
+                AirCommentLabel.Text = "환기하셔도 좋습니다!"
                 themecol = Color.FromArgb(43, 201, 207)
 
                 If My.Settings.AirStd = "AK" Then '에어코리아 기준시
@@ -195,14 +229,14 @@ Public Class WidgetGUI
                     DashPic.Image = My.Resources.dash_2_8
                 End If
 
-                Icon = My.Resources.ico_gr2
             Case 3
                 AirStateLabel.Text = "양호"
+                AirCommentLabel.Text = "괜찮은 날이네요!"
                 themecol = Color.FromArgb(49, 159, 158)
                 DashPic.Image = My.Resources.dash_3_8
-                Icon = My.Resources.ico_gr3
             Case 4
                 AirStateLabel.Text = "보통"
+                AirCommentLabel.Text = "그럭저럭 괜찮은 날이네요!"
                 themecol = Color.FromArgb(11, 182, 82)
 
                 If My.Settings.AirStd = "AK" Then '에어코리아 기준시
@@ -211,9 +245,9 @@ Public Class WidgetGUI
                     DashPic.Image = My.Resources.dash_4_8
                 End If
 
-                Icon = My.Resources.ico_gr4
             Case 5
                 AirStateLabel.Text = "나쁨"
+                AirCommentLabel.Text = "열린 창문이 있다면 닫아주세요~"
                 themecol = Color.FromArgb(239, 108, 0)
 
                 If My.Settings.AirStd = "AK" Then '에어코리아 기준시
@@ -222,9 +256,9 @@ Public Class WidgetGUI
                     DashPic.Image = My.Resources.dash_5_8
                 End If
 
-                Icon = My.Resources.ico_gr5
             Case 6
                 AirStateLabel.Text = "매우 나쁨"
+                AirCommentLabel.Text = "외출시 마스크 꼭 챙기세요!"
                 themecol = Color.FromArgb(229, 57, 53)
 
                 If My.Settings.AirStd = "AK" Then '에어코리아 기준시
@@ -233,20 +267,59 @@ Public Class WidgetGUI
                     DashPic.Image = My.Resources.dash_6_8
                 End If
 
-                Icon = My.Resources.ico_gr6
             Case 7
                 AirStateLabel.Text = "극도로 나쁨"
+                AirCommentLabel.Text = "주의해 주세요!"
                 themecol = Color.FromArgb(86, 9, 7)
                 DashPic.Image = My.Resources.dash_7_8
-                Icon = My.Resources.ico_gr7
             Case 8
                 AirStateLabel.Text = "최악"
+                AirCommentLabel.Text = "가능하다면 외출을 삼가주세요!"
                 themecol = Color.FromArgb(18, 18, 18)
                 DashPic.Image = My.Resources.dash_2
-                Icon = My.Resources.ico_gr8
         End Select
 
-        Text = AirStateLabel.Text + " - monZi 위젯"
+        Dim pm10lvl As String = "-"
+        Dim pm25lvl As String = "-"
+
+        Select Case APIForm.pm10gnum
+            Case 1
+                pm10lvl = "최고"
+            Case 2
+                pm10lvl = "좋음"
+            Case 3
+                pm10lvl = "양호"
+            Case 4
+                pm10lvl = "보통"
+            Case 5
+                pm10lvl = "나쁨"
+            Case 6
+                pm10lvl = "매우 나쁨"
+            Case 7
+                pm10lvl = "극도로 나쁨"
+            Case 8
+                pm10lvl = "최악"
+        End Select
+
+        Select Case APIForm.pm25gnum
+            Case 1
+                pm25lvl = "최고"
+            Case 2
+                pm25lvl = "좋음"
+            Case 3
+                pm25lvl = "양호"
+            Case 4
+                pm25lvl = "보통"
+            Case 5
+                pm25lvl = "나쁨"
+            Case 6
+                pm25lvl = "매우 나쁨"
+            Case 7
+                pm25lvl = "극도로 나쁨"
+            Case 8
+                pm25lvl = "최악"
+        End Select
+
         If My.Settings.FadeEnabled Then
             targcol = themecol
             ColorTrans.Start()
@@ -254,11 +327,23 @@ Public Class WidgetGUI
             SetColor(themecol)
         End If
 
+        If Not (APIForm.combnum = 0 Or APIForm.combnum = -1 Or APIForm.combnum = -2 Or APIForm.combnum = -3 Or APIForm.combnum = -4 Or APIForm.combnum = -5) Then
+            titleStr = APIForm.guititle
+            LocationLabel.Text = My.Settings.LocationName
+            AirDetailLabel.Text = "미세먼지(pm10): " + APIForm.pm10num + "㎍/㎥ (" + pm10lvl + ")" _
+                + vbCr + "초미세먼지(pm2.5): " + APIForm.pm25num + "㎍/㎥ (" + pm25lvl + ")" + vbCr '_
+            '+ "마지막 측정: " + APIForm.NowChk
+            UpdateLabel.Text = "업데이트: " + APIForm.APIupdTime + vbCr + "측정: " + Convert.ToInt16(Mid(APIForm.NowChk, 9, 2)).ToString + "일 " + Mid(APIForm.NowChk, 12)
+        ElseIf APIForm.combnum = 0 Then
+            UpdateLabel.Text = "업데이트 중"
+        Else
+            UpdateLabel.Text = "업데이트" + vbCr + "되지 않음"
+        End If
 
+        TitleLabel.Text = titleStr
 
-        If Not (APIForm.combnum = 0 Or APIForm.combnum = -1 Or APIForm.combnum = -2 Or APIForm.combnum = -3 Or APIForm.combnum = -4) Then
-            TitleLabel.Text = My.Settings.LocationName
-            AirDetailLabel.Text = "pm10(2.5): " + APIForm.pm10num + "(" + APIForm.pm25num + ") ㎍/㎥" + vbCr + APIForm.NowChk
+        If Not My.Settings.CustomAPI = Nothing Then
+            LocationLabel.Text = My.Settings.CustomAPI
         End If
 
         Me.ValidateChildren()
@@ -270,7 +355,8 @@ Public Class WidgetGUI
         TopPanel.BackColor = col
         LockBT.BackColor = col
         MenuBT.BackColor = col
-        BottomPanel.BackColor = col
+        BottomPanel.BackColor = ControlPaint.Dark(col, 0.2)
+        BackColor = ControlPaint.Dark(col, 0.2)
     End Sub
 
     Private Sub Menu_DisableWidget_Click(sender As Object, e As EventArgs) Handles Menu_DisableWidget.Click
@@ -406,12 +492,34 @@ Public Class WidgetGUI
     End Sub
 
     Private Sub Menu_ChangeWidget_Click(sender As Object, e As EventArgs) Handles Menu_ChangeWidget.Click
-        My.Settings.widget_type = "2"
+        My.Settings.widget_type = "1"
         My.Settings.Save()
         My.Settings.Reload()
 
-        Widget2GUI.Show()
+        WidgetGUI.Show()
         Close()
+    End Sub
+
+    Private Sub UpdateButton_MouseMove(sender As Object, e As MouseEventArgs) Handles UpdateButton.MouseMove
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            Me.Size = New Size(PointToClient(MousePosition).X, PointToClient(MousePosition).X * (origianlSize.Height / origianlSize.Width))
+            Invalidate()
+        End If
+    End Sub
+
+    Private Sub UpdateButton_MouseUp(sender As Object, e As MouseEventArgs) Handles UpdateButton.MouseUp
+        ZoomForm(Me, (Height / prevSize.Height), True, False)
+        My.Settings.widget_zoom = (Height / origianlSize.Height)
+        My.Settings.Save()
+        My.Settings.Reload()
+        MainPanel.Visible = True
+        BottomPanel.Visible = True
+    End Sub
+
+    Private Sub UpdateButton_MouseDown(sender As Object, e As MouseEventArgs) Handles UpdateButton.MouseDown
+        prevSize = Size
+        MainPanel.Visible = False
+        BottomPanel.Visible = False
     End Sub
 
     Private Sub Menu_ShowIcon_Click(sender As Object, e As EventArgs) Handles Menu_ShowIcon.Click

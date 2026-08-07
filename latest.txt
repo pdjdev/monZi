@@ -1,3 +1,4 @@
-<version>1.9.1.0</version>
-<note>테스트용</note>
-<link></link>
+<version>1.9.0.0</version>
+<note>- 대기정보 불러오기 오류 패치 (API 대응)
+- 나눔스퀘어 의존성 제거 (Noto Sans)</note>
+<link>https://monzi.pbj.kr</link>

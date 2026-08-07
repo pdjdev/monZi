@@ -14,7 +14,7 @@ Windows PC용 미세먼지 조회·알림 프로그램
 ### 요구 조건
 - Windows 7 이상의 OS (Windows 10 1903+ 권장)
 - Visual Studio 2017 이상 버전의 비주얼 스튜디오
-- .Net Framework 4.6.1 SDK
+- .Net Framework 4.8 SDK
 - 컴퓨터
 ### 순서
 1. 해당 리포지토리를 받습니다.

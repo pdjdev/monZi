@@ -1,0 +1,40 @@
+name: Build monZi WinForms
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-monzi-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build (.NET Framework 4.8)
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Create CI secrets stub
+        shell: pwsh
+        run: Copy-Item monZi/Secrets.example.vb monZi/Secrets.vb
+
+      - name: Build monZi WinForms application
+        run: >
+          msbuild monZi/monZi.vbproj
+          /m
+          /restore
+          /p:Configuration=Release
+          /p:Platform="Any CPU"
+          /p:RestoreIgnoreFailedSources=true
+          /p:ContinuousIntegrationBuild=true

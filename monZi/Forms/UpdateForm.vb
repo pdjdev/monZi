@@ -64,7 +64,7 @@
 
     Private Sub UpdateChk_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles UpdateChk.DoWork
         Try
-            Dim info = webget("https://raw.githubusercontent.com/pdjdev/monZi/master/latest.txt")
+            Dim info = webget($"https://raw.githubusercontent.com/pdjdev/monZi/master/latest.txt?t={DateTimeOffset.UtcNow.ToUnixTimeSeconds()}")
             newver = getData(info, "version")
             newinfo = getData(info, "note")
             updlink = getData(info, "link")

@@ -13,9 +13,9 @@ Module dataModule
         'MsgBox(url)
 
         Dim sourcestr As String = Nothing
-
         sourcestr = source.DownloadString(url)
 
+        'MsgBox("요청: " + url + vbCrLf + "=====" + vbCrLf + "응답: " + sourcestr)
 
         Return sourcestr
     End Function
@@ -25,12 +25,18 @@ Module dataModule
         If String.IsNullOrWhiteSpace(datastr) OrElse String.IsNullOrWhiteSpace(name) Then Return Nothing
 
         Try
-            Dim element = ParseXml(datastr).Descendants().FirstOrDefault(
-                Function(candidate) candidate.Name.LocalName = name)
+            Dim element = ParseXml(datastr).Descendants().FirstOrDefault(Function(candidate) candidate.Name.LocalName = name)
             If element Is Nothing Then Return Nothing
             Return element.Value
         Catch ex As XmlException
-            Return Nothing
+            Try
+                Dim element = ParseXml("<root>" & datastr & "</root>").Descendants().FirstOrDefault(
+            Function(candidate) candidate.Name.LocalName = name)
+                If element Is Nothing Then Return Nothing
+                Return element.Value
+            Catch fragmentException As XmlException
+                Return Nothing
+            End Try
         End Try
     End Function
 

@@ -1,5 +1,8 @@
 ﻿Imports System.Security.Principal
-Imports System.Text.RegularExpressions
+
+Imports System.IO
+Imports System.Xml
+Imports System.Xml.Linq
 
 Module dataModule
 
@@ -18,24 +21,68 @@ Module dataModule
     End Function
 
     'xml형식 파일을 전체값에서 따로 추출하는 함수
-    Public Function getData(datastr As String, name As String)
+    Public Function getData(datastr As String, name As String) As String
+        If String.IsNullOrWhiteSpace(datastr) OrElse String.IsNullOrWhiteSpace(name) Then Return Nothing
 
-        Return midReturn("<" + name + ">", "</" + name + ">", datastr)
-
+        Try
+            Dim element = ParseXml(datastr).Descendants().FirstOrDefault(
+                Function(candidate) candidate.Name.LocalName = name)
+            If element Is Nothing Then Return Nothing
+            Return element.Value
+        Catch ex As XmlException
+            Return Nothing
+        End Try
     End Function
 
-    '중간의 문자열을 리턴하는 함수
-    Public Function midReturn(ByVal first As String, ByVal last As String, ByVal total As String) As String
-        If last.Length < 1 Then
-            midReturn = total.Substring(total.IndexOf(first))
-        End If
-        If first.Length < 1 Then
-            midReturn = total.Substring(0, (total.IndexOf(last)))
+    Public Function getDataElements(datastr As String, name As String) As IEnumerable(Of XElement)
+        If String.IsNullOrWhiteSpace(datastr) OrElse String.IsNullOrWhiteSpace(name) Then
+            Return Enumerable.Empty(Of XElement)()
         End If
 
-        midReturn = ((total.Substring(total.IndexOf(first), (total.IndexOf(last) - total.IndexOf(first)))).Replace(first, "")).Replace(last, "")
+        Try
+            Return ParseXml(datastr).Descendants().Where(
+                Function(candidate) candidate.Name.LocalName = name).ToList()
+        Catch ex As XmlException
+            Try
+                '설정값처럼 여러 XML 요소가 이어진 fragment도 지원한다.
+                Return ParseXml("<root>" & datastr & "</root>").Descendants().Where(
+                    Function(candidate) candidate.Name.LocalName = name).ToList()
+            Catch fragmentException As XmlException
+                Return Enumerable.Empty(Of XElement)()
+            End Try
+        End Try
     End Function
 
+    Private Function ParseXml(xml As String) As XDocument
+        Dim settings As New XmlReaderSettings With {
+            .DtdProcessing = DtdProcessing.Prohibit,
+            .XmlResolver = Nothing
+        }
+
+        Using reader = XmlReader.Create(New StringReader(xml), settings)
+            Return XDocument.Load(reader, LoadOptions.PreserveWhitespace)
+        End Using
+    End Function
+
+    Private Function GetHistoryItems() As List(Of XElement)
+        Dim history = My.Settings.LocHistory
+        If String.IsNullOrWhiteSpace(history) Then Return New List(Of XElement)()
+
+        Try
+            Dim document = ParseXml("<root>" & history & "</root>")
+            Return document.Root.Elements().Where(
+                Function(element) element.Name.LocalName = "locinfo").ToList()
+        Catch ex As XmlException
+            Return New List(Of XElement)()
+        End Try
+    End Function
+
+    Private Function GetChildValue(parent As XElement, name As String) As String
+        Dim child = parent.Elements().FirstOrDefault(
+            Function(element) element.Name.LocalName = name)
+        If child Is Nothing Then Return Nothing
+        Return child.Value
+    End Function
 
 #Region "시작프로그램설정"
 
@@ -102,122 +149,30 @@ Module dataModule
         End If
     End Function
 
+#End Region
+
     Public Function CheckHisExist(isStationName As Boolean, locstring As String) As Boolean
-
-        Dim isExists As Boolean = False
-        Dim tmpdata As String = My.Settings.LocHistory
-
-        If isStationName Then
-
-ret:
-            If tmpdata.Contains("<locinfo>") Then
-
-                Dim FirstStart As Long = tmpdata.IndexOf("<locinfo>") + 10
-
-                Dim chkdata = (Trim(Mid$(tmpdata, FirstStart, tmpdata.Substring(FirstStart).IndexOf("</locinfo>") + 1)))
-
-                If getData(chkdata, "type") = "station" Then '측정소 데이터만 불러오기!!!
-
-                    If locstring = getData(chkdata, "string") Then
-                        isExists = True
-                        GoTo endtask
-                    End If
-
-                    tmpdata = Mid(tmpdata, FirstStart, tmpdata.Length)
-                    GoTo ret
-                End If
-
-            End If
-
-
-        Else
-
-
-ret2:
-            If tmpdata.Contains("<locinfo>") Then
-
-                Dim FirstStart As Long = tmpdata.IndexOf("<locinfo>") + 10
-
-                Dim chkdata = (Trim(Mid$(tmpdata, FirstStart, tmpdata.Substring(FirstStart).IndexOf("</locinfo>") + 1)))
-
-                If getData(chkdata, "type") = "location" Then '측정소 데이터만 불러오기!!!
-
-                    If locstring = getData(chkdata, "string") Then
-                        isExists = True
-                        GoTo endtask
-                    End If
-
-                    tmpdata = Mid(tmpdata, FirstStart, tmpdata.Length)
-                    GoTo ret2
-                End If
-
-            End If
-
-        End If
-
-endtask:
-        Return isExists
-
-
+        Dim expectedType = If(isStationName, "station", "location")
+        Return GetHistoryItems().Any(Function(item) GetChildValue(item, "type") = expectedType AndAlso GetChildValue(item, "string") = locstring)
     End Function
 
     Public Sub CleanHistory() '설정값 정리, 최대 저장갯수를 제한해 나머지 버리는 Sub
-
-        Dim tmpdata As String = My.Settings.LocHistory
-        Dim newdata As String = Nothing
-
-        Dim finddata As New Regex("<locinfo>")
-        Dim datacount As MatchCollection = finddata.Matches(tmpdata)
-
-        Dim tmpcount As Integer = 0
-
-        If datacount.Count > 20 Then
-
-ret:
-            If tmpdata.Contains("<locinfo>") And tmpcount < 20 Then
-
-                Dim FirstStart As Long = tmpdata.IndexOf("<locinfo>") + 10
-                newdata += (Trim(Mid$(tmpdata, FirstStart - 9, tmpdata.Substring(FirstStart).IndexOf("</locinfo>") + 20))) + vbCr
-                tmpdata = Mid(tmpdata, FirstStart, tmpdata.Length)
-
-                tmpcount += 1
-                GoTo ret
-
-            End If
-
-            My.Settings.LocHistory = newdata
-
+        Dim items = GetHistoryItems()
+        If items.Count > 20 Then
+            My.Settings.LocHistory = String.Join(vbCrLf,
+                items.Take(20).Select(Function(item) item.ToString(SaveOptions.DisableFormatting))) & vbCrLf
         End If
-
-
-
-        'MsgBox(newdata)
-
     End Sub
 
     Public Sub AddLocHistory_Axis(locstring As String, pointX As String, pointY As String)
-
-        Dim hisdata As String = "<locinfo>" + vbCr
-        hisdata += "<type>location</type>" + vbCr
-        hisdata += "<string>" + locstring + "</string>" + vbCr
-        hisdata += "<X>" + pointX + "</X>" + vbCr
-        hisdata += "<Y>" + pointY + "</Y>" + vbCr
-        hisdata += "</locinfo>" + vbCr
-
-        My.Settings.LocHistory = hisdata + My.Settings.LocHistory
-
+        Dim item = New XElement("locinfo", New XElement("type", "location"),
+            New XElement("string", locstring), New XElement("X", pointX), New XElement("Y", pointY))
+        My.Settings.LocHistory = item.ToString(SaveOptions.DisableFormatting) & vbCrLf & My.Settings.LocHistory
     End Sub
 
     Public Sub AddLocHistory_station(stationname As String)
-
-        Dim hisdata As String = "<locinfo>" + vbCr
-        hisdata += "<type>station</type>" + vbCr
-        hisdata += "<string>" + stationname + "</string>" + vbCr
-        hisdata += "</locinfo>" + vbCr
-
-        My.Settings.LocHistory = hisdata + My.Settings.LocHistory
-
+        Dim item = New XElement("locinfo", New XElement("type", "station"),
+            New XElement("string", stationname))
+        My.Settings.LocHistory = item.ToString(SaveOptions.DisableFormatting) & vbCrLf & My.Settings.LocHistory
     End Sub
-
-#End Region
 End Module

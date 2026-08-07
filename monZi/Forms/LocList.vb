@@ -100,10 +100,10 @@
     Sub ApplySet()
         Dim ApplyData = ItemData(ListBox1.SelectedIndex)
 
-        Dim newData As String = "<locinfo>" + ApplyData + "</locinfo>"
+        Dim newData As String = ApplyData
 
         For i = 0 To count - 1
-            If Not i = ListBox1.SelectedIndex Then newData += vbCr + "<locinfo>" + ItemData(i) + "</locinfo>"
+            If Not i = ListBox1.SelectedIndex Then newData += vbCr + ItemData(i)
         Next
 
         My.Settings.LocHistory = newData
@@ -133,18 +133,11 @@
 
     Sub LoadData()
         ListBox1.Items.Clear()
-        Dim tmpdata = My.Settings.LocHistory
-
         count = 0
+        For Each item In getDataElements(My.Settings.LocHistory, "locinfo")
+            If count > ItemData.GetUpperBound(0) Then Exit For
 
-ret:
-        If tmpdata.Contains("<locinfo>") Then
-
-            Dim FirstStart As Long = tmpdata.IndexOf("<locinfo>") + 10
-
-            ItemData(count) = Trim(Mid$(tmpdata, FirstStart, tmpdata.Substring(FirstStart).IndexOf("</locinfo>") + 1))
-            tmpdata = Mid(tmpdata, FirstStart, tmpdata.Length)
-
+            ItemData(count) = item.ToString(SaveOptions.DisableFormatting)
             If getData(ItemData(count), "type") = "station" Then
                 ListBox1.Items.Add(getData(ItemData(count), "string") + " (측정소)")
             Else
@@ -152,9 +145,7 @@ ret:
             End If
 
             count += 1
-            GoTo ret
-
-        End If
+        Next
 
         If ListBox1.Items.Count > 0 Then
             ListBox1.SetSelected(0, True)

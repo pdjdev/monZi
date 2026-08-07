@@ -118,30 +118,22 @@
 
     Sub LoadData()
         ListBox1.Items.Clear()
-        Dim tmpdata = AirStationData
-        'tmpdata = My.Resources.testdata
-
         count = 0
+        For Each item In getDataElements(AirStationData, "item")
+            If count > ItemData.GetUpperBound(0) Then Exit For
 
-ret:
-        If tmpdata.Contains("<item>") Then
-
-            Dim FirstStart As Long = tmpdata.IndexOf("<item>") + 7
-
-            ItemData(count) = Trim(Mid$(tmpdata, FirstStart, tmpdata.Substring(FirstStart).IndexOf("</item>") + 1))
-            tmpdata = Mid(tmpdata, FirstStart, tmpdata.Length)
+            ItemData(count) = item.ToString(SaveOptions.DisableFormatting)
+            Dim stationName = getData(ItemData(count), "stationName")
+            Dim distance = getData(ItemData(count), "tm")
 
             If count = 0 Then
-                ListBox1.Items.Add(getData(ItemData(count), "stationName") + " (" + getData(ItemData(count), "tm") + " km) [가장 가까움]")
+                ListBox1.Items.Add(stationName + " (" + distance + " km) [가장 가까움]")
             Else
-                ListBox1.Items.Add(getData(ItemData(count), "stationName") + " (" + getData(ItemData(count), "tm") + " km)")
+                ListBox1.Items.Add(stationName + " (" + distance + " km)")
             End If
 
-
             count += 1
-            GoTo ret
-
-        End If
+        Next
 
         If ListBox1.Items.Count > 0 Then
             ListBox1.SetSelected(0, True)

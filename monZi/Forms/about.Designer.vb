@@ -53,10 +53,11 @@ Partial Class about
         Me.Panel3.Controls.Add(Me.RichTextBox1)
         Me.Panel3.Controls.Add(Me.Panel1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 125)
+        Me.Panel3.Location = New System.Drawing.Point(0, 157)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Padding = New System.Windows.Forms.Padding(10, 0, 10, 10)
-        Me.Panel3.Size = New System.Drawing.Size(519, 162)
+        Me.Panel3.Padding = New System.Windows.Forms.Padding(12, 0, 12, 12)
+        Me.Panel3.Size = New System.Drawing.Size(649, 202)
         Me.Panel3.TabIndex = 7
         '
         'RichTextBox1
@@ -64,10 +65,11 @@ Partial Class about
         Me.RichTextBox1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBox1.Location = New System.Drawing.Point(10, 40)
+        Me.RichTextBox1.Location = New System.Drawing.Point(12, 50)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(499, 112)
+        Me.RichTextBox1.Size = New System.Drawing.Size(625, 140)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
@@ -79,17 +81,19 @@ Partial Class about
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(10, 0)
+        Me.Panel1.Location = New System.Drawing.Point(12, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(499, 40)
+        Me.Panel1.Size = New System.Drawing.Size(625, 50)
         Me.Panel1.TabIndex = 6
         '
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.monZi.My.Resources.Resources.info_logo
-        Me.PictureBox5.Location = New System.Drawing.Point(400, 6)
+        Me.PictureBox5.Location = New System.Drawing.Point(500, 8)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox5.Size = New System.Drawing.Size(35, 35)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox5.TabIndex = 5
         Me.PictureBox5.TabStop = False
@@ -98,18 +102,20 @@ Partial Class about
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Noto Sans KR", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 16)
+        Me.Label1.Location = New System.Drawing.Point(4, 10)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(272, 18)
+        Me.Label1.Size = New System.Drawing.Size(341, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "몬지 (monZi) - 더 나은 공기, 더 나은 삶"
         '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.monZi.My.Resources.Resources.info_gmail
-        Me.PictureBox4.Location = New System.Drawing.Point(468, 6)
+        Me.PictureBox4.Location = New System.Drawing.Point(585, 8)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox4.Size = New System.Drawing.Size(35, 35)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 4
         Me.PictureBox4.TabStop = False
@@ -117,9 +123,10 @@ Partial Class about
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.monZi.My.Resources.Resources.info_tg
-        Me.PictureBox3.Location = New System.Drawing.Point(366, 6)
+        Me.PictureBox3.Location = New System.Drawing.Point(458, 8)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox3.Size = New System.Drawing.Size(35, 35)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 3
         Me.PictureBox3.TabStop = False
@@ -127,9 +134,10 @@ Partial Class about
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.monZi.My.Resources.Resources.info_blog
-        Me.PictureBox2.Location = New System.Drawing.Point(434, 6)
+        Me.PictureBox2.Location = New System.Drawing.Point(542, 8)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 35)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 2
         Me.PictureBox2.TabStop = False
@@ -142,9 +150,10 @@ Partial Class about
         Me.TopPanel.Controls.Add(Me.CloseBT)
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TopPanel.Location = New System.Drawing.Point(0, 0)
+        Me.TopPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TopPanel.Name = "TopPanel"
-        Me.TopPanel.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.TopPanel.Size = New System.Drawing.Size(519, 30)
+        Me.TopPanel.Padding = New System.Windows.Forms.Padding(12, 0, 0, 0)
+        Me.TopPanel.Size = New System.Drawing.Size(649, 38)
         Me.TopPanel.TabIndex = 8
         '
         'VerLabel
@@ -152,10 +161,11 @@ Partial Class about
         Me.VerLabel.BackColor = System.Drawing.Color.Transparent
         Me.VerLabel.Dock = System.Windows.Forms.DockStyle.Right
         Me.VerLabel.ForeColor = System.Drawing.Color.White
-        Me.VerLabel.Location = New System.Drawing.Point(363, 0)
+        Me.VerLabel.Location = New System.Drawing.Point(454, 0)
+        Me.VerLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.VerLabel.Name = "VerLabel"
-        Me.VerLabel.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.VerLabel.Size = New System.Drawing.Size(109, 30)
+        Me.VerLabel.Padding = New System.Windows.Forms.Padding(0, 0, 6, 0)
+        Me.VerLabel.Size = New System.Drawing.Size(136, 38)
         Me.VerLabel.TabIndex = 9
         Me.VerLabel.Text = "VerLabel"
         Me.VerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -165,9 +175,10 @@ Partial Class about
         Me.TitleLabel.Dock = System.Windows.Forms.DockStyle.Left
         Me.TitleLabel.Font = New System.Drawing.Font("Noto Sans KR", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.TitleLabel.ForeColor = System.Drawing.Color.White
-        Me.TitleLabel.Location = New System.Drawing.Point(10, 0)
+        Me.TitleLabel.Location = New System.Drawing.Point(12, 0)
+        Me.TitleLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.TitleLabel.Name = "TitleLabel"
-        Me.TitleLabel.Size = New System.Drawing.Size(139, 30)
+        Me.TitleLabel.Size = New System.Drawing.Size(174, 38)
         Me.TitleLabel.TabIndex = 4
         Me.TitleLabel.Text = "monZi 정보"
         Me.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -177,9 +188,10 @@ Partial Class about
         Me.CloseBT.BackColor = System.Drawing.Color.Transparent
         Me.CloseBT.Dock = System.Windows.Forms.DockStyle.Right
         Me.CloseBT.Image = Global.monZi.My.Resources.Resources.closeicon
-        Me.CloseBT.Location = New System.Drawing.Point(472, 0)
+        Me.CloseBT.Location = New System.Drawing.Point(590, 0)
+        Me.CloseBT.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CloseBT.Name = "CloseBT"
-        Me.CloseBT.Size = New System.Drawing.Size(47, 30)
+        Me.CloseBT.Size = New System.Drawing.Size(59, 38)
         Me.CloseBT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.CloseBT.TabIndex = 3
         Me.CloseBT.TabStop = False
@@ -189,25 +201,27 @@ Partial Class about
         Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = Global.monZi.My.Resources.Resources.infoban
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 30)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 38)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(519, 95)
+        Me.PictureBox1.Size = New System.Drawing.Size(649, 119)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'about
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.Magenta
-        Me.ClientSize = New System.Drawing.Size(519, 287)
+        Me.ClientSize = New System.Drawing.Size(649, 359)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TopPanel)
         Me.Font = New System.Drawing.Font("맑은 고딕", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "about"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "monZi 정보"

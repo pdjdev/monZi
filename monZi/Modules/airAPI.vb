@@ -74,10 +74,8 @@
 
         Dim currentsource As String = webget(currenturl)
 
-        If currentsource.Contains("<stationName>") Then
-            Return getData(currentsource, "stationName")
-        Else
-            Return "{ERROR}"
-        End If
+        Dim stationName = getData(currentsource, "stationName")
+        If stationName IsNot Nothing Then Return stationName
+        Return "{ERROR}"
     End Function
 End Module

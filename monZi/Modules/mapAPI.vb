@@ -2,7 +2,7 @@
 Imports System.Net
 Imports System.Text
 
-Module mapAPI
+Module MapApi
 
     '카카오 위치수집 API
     Public Function getLocationKakao(query As String)

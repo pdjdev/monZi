@@ -1,4 +1,4 @@
-﻿Module airAPI
+﻿Module AirApi
 
     '측정소 이름을 받아서 미세먼지 정보 리턴하는 함수
     Function OLDgetairinfo(station As String)

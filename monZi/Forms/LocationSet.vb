@@ -1,17 +1,17 @@
 ﻿Public Class LocationSet
-    Dim loc As Point
+    Private dragStartLocation As Point
 
-    Dim locdata As String
-    Dim bdname As String
-    Dim locstr As String
-    Public x_num As String
-    Public y_num As String
-    Dim tm_co() = Nothing
+    Private locationData As String
+    Private buildingName As String
+    Private locationName As String
+    Public xCoordinate As String
+    Public yCoordinate As String
+    Private tmCoordinates() = Nothing
 
     Public StationName As String = Nothing
-    Dim loctext As String = Nothing '이거는 최종적으로 셋팅에 저장할 위치 텍스트 (locstr와는 다름)
+    Private locationDisplayName As String = Nothing '최종적으로 설정에 저장할 위치 텍스트
 
-    Public complete As Boolean = False
+    Public IsComplete As Boolean = False
 
 
 #Region "Aero 그림자 효과 (Vista이상)"
@@ -37,13 +37,13 @@
 
     Private Sub FormDrag_MouseDown(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseDown, TitleLabel.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            loc = e.Location
+            dragStartLocation = e.Location
         End If
     End Sub
 
     Private Sub FormDrag_MouseMove(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseMove, TitleLabel.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += e.Location - loc
+            Me.Location += e.Location - dragStartLocation
         End If
     End Sub
 
@@ -55,7 +55,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        If Not complete Then '조회가 완료되었을시
+        If Not IsComplete Then '조회가 완료되었을시
 
             If TextBox1.Text = Nothing Then
                 MsgBox("주소를 입력해 주세요", vbExclamation)
@@ -68,34 +68,34 @@
             If CheckBox1.Checked = False Then '카카오API를 통한 탐색
 
                 Try
-                    locdata = getLocationKakao(TextBox1.Text)
+                    locationData = getLocationKakao(TextBox1.Text)
                 Catch ex As Exception
                     MsgBox("위치 탐색 도중 오류가 발생했습니다." + vbCr + "값이 유효한지, 인터넷 연결이 되어 있는지 확인해 주세요.", vbCritical)
                     GoTo endtask
                 End Try
 
                 Try
-                    locstr = getData(locdata, "address_name")
-                    x_num = getData(locdata, "x")
-                    y_num = getData(locdata, "y")
+                    locationName = getData(locationData, "address_name")
+                    xCoordinate = getData(locationData, "x")
+                    yCoordinate = getData(locationData, "y")
                 Catch ex As Exception
                     MsgBox("유효한 주소가 아닌 것 같습니다. 주소를 확인해 주십시오.", vbExclamation)
                     GoTo endtask
                 End Try
 
-                If locdata.Contains("<building_name>") Then
-                    bdname = getData(locdata, "building_name")
+                If locationData.Contains("<building_name>") Then
+                    buildingName = getData(locationData, "building_name")
                 Else
-                    bdname = Nothing
+                    buildingName = Nothing
                 End If
 
-                If bdname = Nothing Then
-                    loctext = locstr
+                If buildingName = Nothing Then
+                    locationDisplayName = locationName
                 Else
-                    loctext = bdname
+                    locationDisplayName = buildingName
                 End If
 
-                If MsgBox("입력한 주소가 " + locstr + " " + bdname + "이(가) 맞습니까?", vbQuestion + vbYesNo) = vbNo Then
+                If MsgBox("입력한 주소가 " + locationName + " " + buildingName + "이(가) 맞습니까?", vbQuestion + vbYesNo) = vbNo Then
                     MsgBox("주소가 유효한지 확인해 주시고 더 자세한 주소로 입력해 보시기 바랍니다.", vbInformation)
                     GoTo endtask
                 End If
@@ -103,7 +103,7 @@
 
                 'TM좌표로 변환
                 Try
-                    tm_co = convertToTMKakao(x_num, y_num).Split("/")
+                    tmCoordinates = convertToTMKakao(xCoordinate, yCoordinate).Split("/")
                 Catch ex As Exception
                     MsgBox("위치 변환 도중 오류가 발생했습니다." + vbCr + "값이 유효한지, 인터넷 연결이 되어 있는지 확인해 주세요.", vbCritical)
                     GoTo endtask
@@ -140,18 +140,18 @@
             MsgBox("성공적으로 확인되었습니다. '적용'을 눌러 설정을 저장합니다." + vbCr + vbCr + "'입력한 위치의 주변 측정소 조회...'를 눌러 주변 측정소를 선택하실 수도 있습니다.", vbInformation)
 
             CheckBox1.Enabled = False
-            complete = True
+            IsComplete = True
             TextBox1.ReadOnly = True
             Button1.Text = "변경하기"
             Button2.Enabled = True
 
             'MsgBox("클립보드 복사 완료", vbInformation)
-            'Clipboard.SetText(locdata)
+            'Clipboard.SetText(locationData)
 
         Else
 
             CheckBox1.Enabled = True
-            complete = False
+            IsComplete = False
             TextBox1.ReadOnly = False
             Button1.Text = "조회"
             Button2.Enabled = False
@@ -163,7 +163,7 @@ endtask:
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If complete Then
+        If IsComplete Then
 
             '처음판별
             Dim wasitfirst As Boolean = False
@@ -171,9 +171,9 @@ endtask:
 
             If StationName = Nothing Then
                 My.Settings.StationName = Nothing
-                My.Settings.LocationName = loctext
-                My.Settings.LocationPoint_X = tm_co(0)
-                My.Settings.LocationPoint_Y = tm_co(1)
+                My.Settings.LocationName = locationDisplayName
+                My.Settings.LocationPoint_X = tmCoordinates(0)
+                My.Settings.LocationPoint_Y = tmCoordinates(1)
             Else
                 My.Settings.LocationName = StationName & " (측정소)"
                 My.Settings.StationName = StationName
@@ -201,8 +201,8 @@ endtask:
 
 
             If StationName = Nothing Then
-                If Not CheckHisExist(False, loctext) Then
-                    AddLocHistory_Axis(loctext, tm_co(0), tm_co(1))
+                If Not CheckHisExist(False, locationDisplayName) Then
+                    AddLocHistory_Axis(locationDisplayName, tmCoordinates(0), tmCoordinates(1))
                 End If
             Else
                 If Not CheckHisExist(True, StationName) Then
@@ -215,11 +215,11 @@ endtask:
 
 
             Me.Close()
-            End If
+        End If
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
-        If complete Then
+        If IsComplete Then
             If MsgBox("지정한 위치가 적용되지 않았습니다. 그래도 닫으시겠습니까?", vbQuestion + vbYesNo) = vbNo Then
                 GoTo endtask
             End If
@@ -239,12 +239,12 @@ endtask:
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        If x_num = Nothing Or y_num = Nothing Or Not complete Then
+        If xCoordinate = Nothing Or yCoordinate = Nothing Or Not IsComplete Then
             MsgBox("우선 위치를 지정해 주세요.", vbInformation)
 
         Else
             Try
-                StationList.AirStationData = getNearStation(tm_co(0), tm_co(1))
+                StationList.AirStationData = getNearStation(tmCoordinates(0), tmCoordinates(1))
             Catch ex As Exception
                 MsgBox("측정소를 검색하던 도중 오류가 발생했습니다." + vbCr + "주소가 유효한지 확인해 주세요.", vbExclamation)
                 'StationList.ShowDialog(Me)

@@ -135,7 +135,7 @@
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles OptBT.Click
-        OptionForm.mode = 2
+        OptionForm.SelectedTabIndex = 2
         OptionForm.Show()
     End Sub
 

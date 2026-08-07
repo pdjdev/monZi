@@ -3,8 +3,8 @@
 Module StartupSetter
 
     Dim shortcutname = "\monzi.lnk"
-    Const AppLaunchCmd = "C:\Windows\explorer.exe"
-    Private Const ERROR_INSUFFICIENT_BUFFER As Integer = 122
+    Const appLaunchCmd = "C:\Windows\explorer.exe"
+    Private Const errorInsufficientBuffer As Integer = 122
 
     <System.Runtime.InteropServices.DllImport("kernel32.dll", CharSet:=System.Runtime.InteropServices.CharSet.Unicode)>
     Private Function GetCurrentApplicationUserModelId(ByRef applicationUserModelIdLength As UInteger,
@@ -15,7 +15,7 @@ Module StartupSetter
     Private Function GetCurrentAppUserModelId() As String
         Try
             Dim length As UInteger = 0
-            If GetCurrentApplicationUserModelId(length, Nothing) <> ERROR_INSUFFICIENT_BUFFER Then
+            If GetCurrentApplicationUserModelId(length, Nothing) <> errorInsufficientBuffer Then
                 Return Nothing
             End If
 
@@ -33,15 +33,15 @@ Module StartupSetter
 
     '시작프로그램 바로가기에서 Explorer가 실행할 AppsFolder 경로.
     '패키지 ID는 스토어 배포용 manifest의 Identity에 맞춰 관리한다.
-    Private Const AppCode As String = "shell:appsFolder\49490PBJSoftware.monZi_fv4zvza0919de!App"
+    Private Const appCode As String = "shell:appsFolder\49490PBJSoftware.monZi_fv4zvza0919de!App"
 
-    Private ReadOnly Property isStoreApp As Boolean
+    Private ReadOnly Property IsStoreApp As Boolean
         Get
             Return Not String.IsNullOrEmpty(GetCurrentAppUserModelId())
         End Get
     End Property
 
-    Public Function checkStartUp() As Boolean
+    Public Function CheckStartUp() As Boolean
         Dim destlnk As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & shortcutname
 
         If Not IO.File.Exists(destlnk) Then Return False
@@ -51,9 +51,9 @@ Module StartupSetter
         Dim targetPath = CStr(shortcut.TargetPath)
         Dim arguments = CStr(shortcut.Arguments).Trim()
         'MSIX 바로가기는 explorer.exe가 AppsFolder 경로를 실행한다.
-        If isStoreApp AndAlso
-           PathsEqual(targetPath, AppLaunchCmd) AndAlso
-           String.Equals(arguments, AppCode, StringComparison.OrdinalIgnoreCase) Then
+        If IsStoreApp AndAlso
+           PathsEqual(targetPath, appLaunchCmd) AndAlso
+           String.Equals(arguments, appCode, StringComparison.OrdinalIgnoreCase) Then
             Return True
         End If
 
@@ -82,9 +82,9 @@ Module StartupSetter
         Dim MyShortcut
         MyShortcut = wsh.CreateShortcut(Path)
 
-        If isStoreApp Then
-            MyShortcut.TargetPath = wsh.ExpandEnvironmentStrings(AppLaunchCmd)
-            MyShortcut.Arguments = AppCode
+        If IsStoreApp Then
+            MyShortcut.TargetPath = wsh.ExpandEnvironmentStrings(appLaunchCmd)
+            MyShortcut.Arguments = appCode
         Else
             MyShortcut.TargetPath = wsh.ExpandEnvironmentStrings(Application.ExecutablePath)
         End If
@@ -98,11 +98,11 @@ Module StartupSetter
     End Sub
 
     '바로가기 목적지경로 리턴 2
-    Function GetTargetPath(ByVal FileName As String)
+    Function GetTargetPath(ByVal fileName As String)
         Dim Obj As Object
         Obj = CreateObject("WScript.Shell")
         Dim Shortcut As Object
-        Shortcut = Obj.CreateShortcut(FileName)
+        Shortcut = Obj.CreateShortcut(fileName)
 
         If Not Shortcut.Arguments = "" Then
             Return Shortcut.TargetPath + " " + Shortcut.Arguments

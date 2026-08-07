@@ -106,7 +106,7 @@
                 .StationName = getData(ItemData(ListBox1.SelectedIndex), "stationName")
                 .CheckBox1.Checked = True
                 .CheckBox1.Enabled = False
-                .complete = True
+                .IsComplete = True
                 .TextBox1.ReadOnly = True
                 .Button1.Text = "변경하기"
                 .Button2.Enabled = True
@@ -151,7 +151,7 @@
         End If
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         isSetLocClicked = True
 
         Dim mouseloc As New Point(Cursor.Position.X, Cursor.Position.Y)

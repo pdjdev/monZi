@@ -4,7 +4,7 @@ Imports System.IO
 Imports System.Xml
 Imports System.Xml.Linq
 
-Module dataModule
+Module DataModule
 
     'web에서 문자열 가져오는 함수
     Public Function webget(url As String)

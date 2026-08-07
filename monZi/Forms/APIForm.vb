@@ -55,32 +55,32 @@
         '        Else
 
         PCTimeCheck.Interval = 5000
-            '체크여부를 확인 (5초 간격)
-            If My.Settings.ChkEnabled Then
+        '체크여부를 확인 (5초 간격)
+        If My.Settings.ChkEnabled Then
 
-                If Not (Now.Hour = PrevHour) Then '시간의 시가 바뀌었다면
+            If Not (Now.Hour = PrevHour) Then '시간의 시가 바뀌었다면
 
-                    If Not Checking Then
-                        Checking = True
-                        CombinedAPICheck()
-                    End If
-
-                End If
-                PrevHour = Now.Hour
-
-            Else
-                '실시간 체킹을 안할 때
-
-                If airData = Nothing Then '아무 수집 데이터가 없을때
-
-                    If Not Checking Then '수집 데이터도 없고 체킹작업도 안하고있을때
-                        Checking = True
-                        CombinedAPICheck()
-                    End If
-
+                If Not Checking Then
+                    Checking = True
+                    CombinedAPICheck()
                 End If
 
             End If
+            PrevHour = Now.Hour
+
+        Else
+            '실시간 체킹을 안할 때
+
+            If airData = Nothing Then '아무 수집 데이터가 없을때
+
+                If Not Checking Then '수집 데이터도 없고 체킹작업도 안하고있을때
+                    Checking = True
+                    CombinedAPICheck()
+                End If
+
+            End If
+
+        End If
 
         ' End If
     End Sub
@@ -370,7 +370,7 @@ passforDEBUGING:
 
         Catch ex As Exception
             APIOK = False
-        combnum = -1
+            combnum = -1
         End Try
 endtask:
     End Sub

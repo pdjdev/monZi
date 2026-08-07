@@ -1,13 +1,13 @@
 ﻿Public Class OptionForm
-    Public mode As Integer = 1
-    Dim Loc As Point
+    Public SelectedTabIndex As Integer = 1
+    Private dragStartLocation As Point
 
-    Dim ActiveColor As Color = Color.FromArgb(0, 229, 255)
-    Dim inActiveColor As Color = Color.FromArgb(0, 86, 98)
-    Dim optionchanged As Boolean = False
+    Private activeTabColor As Color = Color.FromArgb(0, 229, 255)
+    Private inactiveTabColor As Color = Color.FromArgb(0, 86, 98)
+    Private hasOptionChanged As Boolean = False
 
-    Dim DEBUGCOUNT As Integer = 0 '디버그 옵션 이벤트카운트
-    Dim DEBUGMODE As Boolean = False '디버그 옵션 표시 여부 (배포시에는 FALSE로 두기)
+    Private debugClickCount As Integer = 0 '디버그 옵션 이벤트 카운트
+    Private isDebugMode As Boolean = False '디버그 옵션 표시 여부 (배포 시에는 False로 두기)
 
 #Region "Aero 그림자 효과 (Vista이상)"
 
@@ -21,7 +21,7 @@
 #Region "페이드 효과" 'Load시 Opacity=0 꼭하기
 
     Private Sub FadeInEffect(sender As Object, e As EventArgs) Handles MyBase.Shown
-        optionchanged = False
+        hasOptionChanged = False
         ApplyBT.Text = "닫기"
         Me.Refresh()
         FadeIn(Me, 1)
@@ -35,23 +35,23 @@
 
     Private Sub FormDrag_MouseDown(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseDown, TitleLabel.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            Loc = e.Location
+            dragStartLocation = e.Location
         End If
     End Sub
 
     Private Sub FormDrag_MouseMove(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseMove, TitleLabel.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += e.Location - Loc
+            Me.Location += e.Location - dragStartLocation
         End If
     End Sub
 
     Private Sub LocationSet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MainGUI.TopMost = False '화면 크기가 작은 PC에서 MainGUI가 옵션창을 가리기에 잠시 TopMost 해제하기 -> FormClosing때 다시 복구
-        Modeset(mode)
+        SetMode(SelectedTabIndex)
         SettingLoad()
         Opacity = 0
-        DEBUGMODE = (My.Settings.APIFORM Or My.Settings.UseAKAPI)
-        DEBUGPANEL.Visible = DEBUGMODE
+        isDebugMode = (My.Settings.APIFORM Or My.Settings.UseAKAPI)
+        DEBUGPANEL.Visible = isDebugMode
         If My.Settings.UseNativeFont Then ChangeToNativeFont(Me)
     End Sub
 
@@ -63,20 +63,20 @@
         CloseBT.BackColor = Color.Transparent
     End Sub
 
-    Sub Modeset(mode As Integer)
-        Select Case mode
+    Private Sub SetMode(selectedTabIndex As Integer)
+        Select Case selectedTabIndex
             Case 1
-                Tab1.BackColor = ActiveColor
-                Tab2.BackColor = inActiveColor
-                Tab3.BackColor = inActiveColor
+                Tab1.BackColor = activeTabColor
+                Tab2.BackColor = inactiveTabColor
+                Tab3.BackColor = inactiveTabColor
                 TabPanel1.Show()
                 TabPanel2.Hide()
                 TabPanel3.Hide()
 
             Case 2
-                Tab1.BackColor = inActiveColor
-                Tab2.BackColor = ActiveColor
-                Tab3.BackColor = inActiveColor
+                Tab1.BackColor = inactiveTabColor
+                Tab2.BackColor = activeTabColor
+                Tab3.BackColor = inactiveTabColor
                 TabPanel1.Hide()
                 TabPanel2.Show()
                 TabPanel3.Hide()
@@ -96,9 +96,9 @@
                 End If
 
             Case 3
-                Tab1.BackColor = inActiveColor
-                Tab2.BackColor = inActiveColor
-                Tab3.BackColor = ActiveColor
+                Tab1.BackColor = inactiveTabColor
+                Tab2.BackColor = inactiveTabColor
+                Tab3.BackColor = activeTabColor
                 TabPanel1.Hide()
                 TabPanel2.Hide()
                 TabPanel3.Show()
@@ -107,22 +107,22 @@
     End Sub
 
     Private Sub TabLabel1_Click(sender As Object, e As EventArgs) Handles TabLabel1.Click
-        Modeset(1)
+        SetMode(1)
     End Sub
 
     Private Sub TabLabel2_Click(sender As Object, e As EventArgs) Handles TabLabel2.Click
-        Modeset(2)
+        SetMode(2)
     End Sub
 
     Private Sub TabLabel3_Click(sender As Object, e As EventArgs) Handles TabLabel3.Click
-        Modeset(3)
+        SetMode(3)
     End Sub
 
     Sub SettingLoad()
 
         'Tab1
         Try
-            dfchk_1.Checked = checkStartUp()
+            dfchk_1.Checked = CheckStartUp()
         Catch ex As Exception
             MsgBox("시작프로그램 설정 여부 확인 도중 오류가 발생했습니다.", vbCritical)
         End Try
@@ -187,7 +187,7 @@ pass1:
             If dfchk_1.Checked Then
                 SetStartup()
             Else
-                If checkStartUp() Then
+                If CheckStartUp() Then
                     RemoveStartup()
                 End If
             End If
@@ -288,7 +288,7 @@ pass1:
     End Sub
 
     Private Sub CloseBT_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
-        If optionchanged = True Then
+        If hasOptionChanged = True Then
             If MsgBox("변경 사항을 저장하지 않고 닫으시겠습니까?", vbQuestion + vbYesNo) = vbNo Then
                 GoTo donothing
             End If
@@ -304,19 +304,19 @@ donothing:
         alchk_7.CheckedChanged, alchk_8.CheckedChanged, alchk_2_1.CheckedChanged, alchk_2_2.CheckedChanged,
         alchk_2_3.CheckedChanged, etchk_1.CheckedChanged, etchk_2.CheckedChanged, etchk_3.CheckedChanged,
         etchk_debug.CheckedChanged, alchk_2_4.CheckedChanged, etchk_4.CheckedChanged, etchk_useakapi.CheckedChanged
-        optionchanged = True
+        hasOptionChanged = True
         ApplyBT.Text = "적용하기"
     End Sub
 
 
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        DEBUGCOUNT += 1
+        debugClickCount += 1
 
-        If DEBUGCOUNT = 10 Then
+        If debugClickCount = 10 Then
             MsgBox("디버그모드 활성화", vbInformation)
-            DEBUGMODE = True
-            DEBUGPANEL.Visible = DEBUGMODE
+            isDebugMode = True
+            DEBUGPANEL.Visible = isDebugMode
         End If
     End Sub
 

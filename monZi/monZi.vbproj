@@ -126,10 +126,10 @@
     <Compile Include="ErrorForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\about.Designer.vb">
-      <DependentUpon>about.vb</DependentUpon>
+    <Compile Include="Forms\AboutForm.Designer.vb">
+      <DependentUpon>AboutForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\about.vb">
+    <Compile Include="Forms\AboutForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\StationList.Designer.vb">
@@ -150,8 +150,8 @@
     <Compile Include="Forms\Widget2GUI.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\airAPI.vb" />
-    <Compile Include="Modules\dataModule.vb" />
+    <Compile Include="Modules\AirApi.vb" />
+    <Compile Include="Modules\DataModule.vb" />
     <Compile Include="Forms\APIForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -159,7 +159,7 @@
       <DependentUpon>APIForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\GUIEffect.vb" />
+    <Compile Include="Modules\GuiEffect.vb" />
     <Compile Include="Forms\LocationSet.Designer.vb">
       <DependentUpon>LocationSet.vb</DependentUpon>
     </Compile>
@@ -178,7 +178,7 @@
     <Compile Include="Forms\MainGUI.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\mapAPI.vb" />
+    <Compile Include="Modules\MapApi.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -237,8 +237,8 @@
     <EmbeddedResource Include="ErrorForm.resx">
       <DependentUpon>ErrorForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\about.resx">
-      <DependentUpon>about.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\APIForm.resx">
       <DependentUpon>APIForm.vb</DependentUpon>

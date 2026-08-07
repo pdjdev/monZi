@@ -1,4 +1,4 @@
-﻿Public Class about
+﻿Public Class AboutForm
 #Region "Aero 그림자 효과 (Vista이상)"
     Dim loc As Point
 

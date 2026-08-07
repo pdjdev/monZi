@@ -3,7 +3,7 @@ Imports System.Runtime.InteropServices
 Imports System.Drawing.Text
 Imports System.Runtime.CompilerServices
 
-Module GUIEffect
+Module GuiEffect
 
 #Region "Aero 그림자 효과 (Vista이상)"
     Structure MARGINS

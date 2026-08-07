@@ -585,13 +585,13 @@ endtask:
         Dim mouseloc As New Point(Cursor.Position.X, Cursor.Position.Y)
         Dim marign As Integer = dpicalc(Me, 10)
 
-        Dim showx = Screen.GetWorkingArea(mouseloc).Width - about.Width - marign
-        Dim showy = Screen.GetWorkingArea(mouseloc).Height - about.Height - marign
-        about.SetDesktopLocation(showx, showy)
+        Dim showx = Screen.GetWorkingArea(mouseloc).Width - AboutForm.Width - marign
+        Dim showy = Screen.GetWorkingArea(mouseloc).Height - AboutForm.Height - marign
+        AboutForm.SetDesktopLocation(showx, showy)
 
         FadeOut(Me)
         Hide()
-        about.Show()
+        AboutForm.Show()
 
 
         'MsgBox(My.Resources.appinfo, vbInformation)

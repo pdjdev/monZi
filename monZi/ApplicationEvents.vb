@@ -24,7 +24,7 @@ Namespace My
         End Sub
 
         Sub ErrorKillProcess()
-            about.Close()
+            AboutForm.Close()
             APIForm.Close()
             LocationSet.Close()
             LocList.Close()

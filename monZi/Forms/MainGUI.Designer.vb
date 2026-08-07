@@ -508,7 +508,7 @@ Partial Class MainGUI
         Me.Name = "MainGUI"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "monZ"
+        Me.Text = "monZi"
         Me.TopMost = True
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.TopPanel.ResumeLayout(False)

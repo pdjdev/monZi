@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Modules\StartupSetter.vb" />
     <Compile Include="Secrets.vb" />
     <Compile Include="ErrorForm.Designer.vb">
       <DependentUpon>ErrorForm.vb</DependentUpon>

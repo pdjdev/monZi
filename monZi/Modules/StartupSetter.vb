@@ -31,32 +31,43 @@ Module StartupSetter
         End Try
     End Function
 
-    Private ReadOnly Property AppCode As String
-        Get
-            Return GetCurrentAppUserModelId()
-        End Get
-    End Property
+    '시작프로그램 바로가기에서 Explorer가 실행할 AppsFolder 경로.
+    '패키지 ID는 스토어 배포용 manifest의 Identity에 맞춰 관리한다.
+    Private Const AppCode As String = "shell:appsFolder\49490PBJSoftware.monZi_fv4zvza0919de!App"
 
     Private ReadOnly Property isStoreApp As Boolean
         Get
-            Return Not String.IsNullOrEmpty(AppCode)
+            Return Not String.IsNullOrEmpty(GetCurrentAppUserModelId())
         End Get
     End Property
 
     Public Function checkStartUp() As Boolean
         Dim destlnk As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & shortcutname
 
-        If IO.File.Exists(destlnk) Then
-            If isStoreApp And GetTargetPath(destlnk) = AppLaunchCmd + " " + AppCode Then
-                Return True
-            ElseIf Not isStoreApp And GetTargetPath(destlnk) = Application.ExecutablePath Then
-                Return True
-            Else
-                Return False
-            End If
-        Else
-            Return False
+        If Not IO.File.Exists(destlnk) Then Return False
+
+        Dim wsh As Object = CreateObject("WScript.Shell")
+        Dim shortcut As Object = wsh.CreateShortcut(destlnk)
+        Dim targetPath = CStr(shortcut.TargetPath)
+        Dim arguments = CStr(shortcut.Arguments).Trim()
+        'MSIX 바로가기는 explorer.exe가 AppsFolder 경로를 실행한다.
+        If isStoreApp AndAlso
+           PathsEqual(targetPath, AppLaunchCmd) AndAlso
+           String.Equals(arguments, AppCode, StringComparison.OrdinalIgnoreCase) Then
+            Return True
         End If
+
+        '일반 exe 바로가기 및 이전 버전이 남긴 "exe + shell:appsFolder" 형식도 인정한다.
+        If Not PathsEqual(targetPath, Application.ExecutablePath) Then Return False
+
+        Return String.IsNullOrEmpty(arguments) OrElse
+               arguments.StartsWith("shell:appsFolder\", StringComparison.OrdinalIgnoreCase)
+    End Function
+
+    Private Function PathsEqual(firstPath As String, secondPath As String) As Boolean
+        Return String.Equals(IO.Path.GetFullPath(firstPath).TrimEnd("\"c),
+                             IO.Path.GetFullPath(secondPath).TrimEnd("\"c),
+                             StringComparison.OrdinalIgnoreCase)
     End Function
 
     Sub SetStartup()

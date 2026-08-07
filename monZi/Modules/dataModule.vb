@@ -94,9 +94,44 @@ Module dataModule
 
     Dim shortcutname = "\monzi.lnk"
     Const AppLaunchCmd = "C:\Windows\explorer.exe"
-    Const AppCode = "shell:appsFolder\49490PBJSoftware.monZi_fv4zvza0919de!App"
+    Private Const ERROR_INSUFFICIENT_BUFFER As Integer = 122
 
-    Const isStoreApp = False
+    <System.Runtime.InteropServices.DllImport("kernel32.dll", CharSet:=System.Runtime.InteropServices.CharSet.Unicode)>
+    Private Function GetCurrentApplicationUserModelId(ByRef applicationUserModelIdLength As UInteger,
+                                                      applicationUserModelId As System.Text.StringBuilder) As Integer
+    End Function
+
+    'MSIX/AppX로 실행 중인 프로세스에만 AUMID가 존재한다.
+    Private Function GetCurrentAppUserModelId() As String
+        Try
+            Dim length As UInteger = 0
+            If GetCurrentApplicationUserModelId(length, Nothing) <> ERROR_INSUFFICIENT_BUFFER Then
+                Return Nothing
+            End If
+
+            Dim applicationUserModelId As New System.Text.StringBuilder(CInt(length))
+            If GetCurrentApplicationUserModelId(length, applicationUserModelId) <> 0 Then
+                Return Nothing
+            End If
+
+            Return applicationUserModelId.ToString()
+        Catch ex As EntryPointNotFoundException
+            'Windows 7 등 패키지 ID API를 지원하지 않는 환경
+            Return Nothing
+        End Try
+    End Function
+
+    Private ReadOnly Property AppCode As String
+        Get
+            Return GetCurrentAppUserModelId()
+        End Get
+    End Property
+
+    Private ReadOnly Property isStoreApp As Boolean
+        Get
+            Return Not String.IsNullOrEmpty(AppCode)
+        End Get
+    End Property
 
     Public Function checkStartUp() As Boolean
         Dim destlnk As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & shortcutname

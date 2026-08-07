@@ -36,7 +36,7 @@ Public Class MainGUI
         If Not My.Settings.StartupPopIgnore Then
             Dim startupset As Boolean = True
             Try
-                startupset = checkStartUp()
+                startupset = CheckStartUp()
             Catch ex As Exception
                 '오류가 발생하면 아무것도 안하는걸로
                 startupset = False

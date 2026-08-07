@@ -122,7 +122,7 @@
 
         'Tab1
         Try
-            dfchk_1.Checked = checkStartUp()
+            dfchk_1.Checked = CheckStartUp()
         Catch ex As Exception
             MsgBox("시작프로그램 설정 여부 확인 도중 오류가 발생했습니다.", vbCritical)
         End Try
@@ -187,7 +187,7 @@ pass1:
             If dfchk_1.Checked Then
                 SetStartup()
             Else
-                If checkStartUp() Then
+                If CheckStartUp() Then
                     RemoveStartup()
                 End If
             End If

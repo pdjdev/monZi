@@ -2,6 +2,8 @@
 ![image](image/monzi_hires.png)
 https://monzi.pbj.kr/
 
+<a href="https://get.microsoft.com/installer/download/9pglfn7t3rvh?referrer=appbadge" target="_self" >	<img src="https://get.microsoft.com/images/ko%20dark.svg" width="200"/></a>
+
 Windows PC용 미세먼지 조회·알림 프로그램
 
 ## 현재 포함된 것

@@ -36,5 +36,6 @@ jobs:
           /restore
           /p:Configuration=Release
           /p:Platform=AnyCPU
+          /p:SignAssembly=false
           /p:RestoreIgnoreFailedSources=true
           /p:ContinuousIntegrationBuild=true

@@ -1,5 +1,5 @@
 ﻿Public Class StartupAsk
-    Dim loc As Point
+    Private dragStartLocation As Point
 
 #Region "Aero 그림자 효과 (Vista이상)"
 
@@ -24,13 +24,13 @@
 
     Private Sub FormDrag_MouseDown(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseDown, TitleLabel.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            Loc = e.Location
+            dragStartLocation = e.Location
         End If
     End Sub
 
     Private Sub FormDrag_MouseMove(sender As Object, e As MouseEventArgs) Handles TopPanel.MouseMove, TitleLabel.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += e.Location - loc
+            Me.Location += e.Location - dragStartLocation
         End If
     End Sub
 

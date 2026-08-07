@@ -139,7 +139,7 @@ Partial Class OptionForm
         Me.ResetBT.Name = "ResetBT"
         Me.ResetBT.Size = New System.Drawing.Size(119, 52)
         Me.ResetBT.TabIndex = 6
-        Me.ResetBT.Text = "프로그램" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "초기화"
+        Me.ResetBT.Text = "설정 초기화"
         Me.ResetBT.UseVisualStyleBackColor = False
         '
         'ApplyBT
